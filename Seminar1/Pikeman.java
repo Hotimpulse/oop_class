@@ -1,4 +1,4 @@
-package oop_class.Seminar1.NPCs;
+package oop_class.Seminar1;
 
 public class Pikeman extends Npc {
 

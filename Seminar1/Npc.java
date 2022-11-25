@@ -1,17 +1,17 @@
-package oop_class.Seminar1.NPCs;
+package oop_class.Seminar1;
 
 import java.util.Arrays;
 
 public abstract class Npc {
-    int attack;
-    int defense;
-    int shots;
-    int[] damage;
-    int health;
-    int speed;
-    Boolean delivery;
-    Boolean magic;
-    String name;
+    protected int attack;
+    protected int defense;
+    protected int shots;
+    protected int[] damage;
+    protected int health;
+    protected int speed;
+    protected Boolean delivery;
+    protected Boolean magic;
+    protected String name;
 
     public Npc(int attack, int defense, int shots, int[] damage, int health, int speed, Boolean delivery, Boolean magic,
             String name) {

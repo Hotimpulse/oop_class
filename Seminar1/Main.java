@@ -1,4 +1,4 @@
-package oop_class.Seminar1.NPCs;
+package oop_class.Seminar1;
 
 import java.util.ArrayList;
 import java.util.List;
