@@ -7,6 +7,7 @@ public class Animal {
     protected String name;
     protected String dateOfBirth;
     protected String commands;
+    protected String species;
     public ArrayList<String> commandList = new ArrayList<>();
 
 
@@ -40,14 +41,18 @@ public class Animal {
         return this.subtype;
     }
 
+    public String getSpecies() {
+        return species;
+    }
     @Override
     public String toString() {
         return "Animal{" +
                 "id = " + id +
                 ", name = " + name +
                 ", date of birth = " + dateOfBirth +
-                ", type = " + subtype +
-                ", commands = " + commands + "}";
+                ", class = " + subtype +
+                ", commands = " + commands +
+                ", species = " + species + "}";
     }
 
 

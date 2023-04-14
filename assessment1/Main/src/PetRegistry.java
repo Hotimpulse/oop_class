@@ -1,4 +1,5 @@
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -6,14 +7,6 @@ import java.util.Scanner;
 public class PetRegistry {
     private static final ArrayList<Animal> animalList = new ArrayList<>();
     private static final Counter counter = new Counter();
-
-//    static ArrayList<String> cats = new ArrayList<>();
-//    static ArrayList<String> dogs = new ArrayList<>();
-//    static ArrayList<String> hamsters = new ArrayList<>();
-//    static ArrayList<String> donkeys = new ArrayList<>();
-//    static ArrayList<String> horses = new ArrayList<>();
-//    static ArrayList<String> allAnimals = new ArrayList<>();
-
     public static void main(String[] args) {
         PetRegistry registry = new PetRegistry();
         registry.run();
@@ -67,17 +60,24 @@ public class PetRegistry {
         System.out.println("4. Horse");
         System.out.println("5. Donkey");
 
-        int animalSpecies = scanner.nextInt();
+        int choice = scanner.nextInt();
 
         System.out.println("Please enter the animal's name:");
         String name = scanner.next();
 
         System.out.println("Please enter the animal's date of birth (YYYY-MM-DD):");
-//        try {
-//
-//        }
         String dateOfBirth = scanner.next();
-
+        while(true){
+            try {
+                SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                dateFormat.setLenient(false);
+                dateFormat.parse(dateOfBirth);
+                break;
+            } catch (Exception e) {
+                System.out.println("This date format is incorrect, make sure to use YYYY-MM-DD");
+                return;
+            }
+        }
 
         Scanner input = new Scanner(System.in);
         String subtype = "";
@@ -99,45 +99,43 @@ public class PetRegistry {
         System.out.println("Please enter the animal's primary command:");
         String primaryCommand = scanner.next();
 
-
         System.out.println("Animal added successfully!");
 
         Animal animal = null;
 
-        switch (animalSpecies) {
-            case 1:
-                animal = new Dog(counter.getCount(), name, dateOfBirth, subtype, primaryCommand);
+        switch (choice) {
+            case 1 -> {
+                animal = new Dog(counter.getCount(), name, dateOfBirth, subtype, primaryCommand, "Dog");
                 animal.addCommand(primaryCommand);
                 animalList.add(animal);
-                break;
-            case 2:
-                animal = new Cat(counter.getCount(), name, dateOfBirth, subtype, primaryCommand);
+            }
+            case 2 -> {
+                animal = new Cat(counter.getCount(), name, dateOfBirth, subtype, primaryCommand, "Cat");
                 animal.addCommand(primaryCommand);
                 animalList.add(animal);
-                break;
-            case 3:
-                animal = new Hamster(counter.getCount(), name, dateOfBirth, subtype, primaryCommand);
+            }
+            case 3 -> {
+                animal = new Hamster(counter.getCount(), name, dateOfBirth, subtype, primaryCommand, "Hamster");
                 animal.addCommand(primaryCommand);
                 animalList.add(animal);
-                break;
-            case 4:
-                animal = new Horse(counter.getCount(), name, dateOfBirth, subtype, primaryCommand);
+            }
+            case 4 -> {
+                animal = new Horse(counter.getCount(), name, dateOfBirth, subtype, primaryCommand, "Horse");
                 animal.addCommand(primaryCommand);
                 animalList.add(animal);
-                break;
-            case 5:
-                animal = new Donkey(counter.getCount(), name, dateOfBirth, subtype, primaryCommand);
+            }
+            case 5 -> {
+                animal = new Donkey(counter.getCount(), name, dateOfBirth, subtype, primaryCommand, "Donkey");
                 animal.addCommand(primaryCommand);
                 animalList.add(animal);
-                break;
-            default:
+            }
+            default -> {
                 System.out.println("Invalid animal type");
                 return;
+            }
         }
 
         System.out.println("Total animals in the registry: " + animalList.size());
-
-
     }
 
     private void seeAnimalCommands() {
@@ -157,9 +155,6 @@ public class PetRegistry {
 
     private void teachAnimalNewCommands() {
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Enter the species of your animal: ");
-        String animalType = scanner.nextLine().toLowerCase();
 
         System.out.println("Enter the animal's ID: ");
         int animalID = Integer.parseInt(scanner.nextLine());
@@ -194,7 +189,7 @@ public class PetRegistry {
                 System.out.println("Change class:");
                 System.out.println("1 - yes");
                 System.out.println("2 - no");
-                int choice = scanner.nextInt();
+                scanner.nextInt();
 
                 if (animal2.subtype.equalsIgnoreCase("Domestic")) {
                     animal2.subtype = "Pack";
