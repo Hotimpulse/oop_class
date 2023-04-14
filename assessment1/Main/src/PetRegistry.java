@@ -1,10 +1,18 @@
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class PetRegistry {
     private static final ArrayList<Animal> animalList = new ArrayList<>();
     private static final Counter counter = new Counter();
+
+//    static ArrayList<String> cats = new ArrayList<>();
+//    static ArrayList<String> dogs = new ArrayList<>();
+//    static ArrayList<String> hamsters = new ArrayList<>();
+//    static ArrayList<String> donkeys = new ArrayList<>();
+//    static ArrayList<String> horses = new ArrayList<>();
+//    static ArrayList<String> allAnimals = new ArrayList<>();
 
     public static void main(String[] args) {
         PetRegistry registry = new PetRegistry();
@@ -19,9 +27,11 @@ public class PetRegistry {
             System.out.println("2. Place the animal in the correct class");
             System.out.println("3. See the list of commands that the animal executes");
             System.out.println("4. Teach the animal new commands");
-            System.out.println("5. Exit");
-
+            System.out.println("5. See all animals");
+            System.out.println("6. Exit");
+            System.out.println();
             System.out.print("Enter your number here: ");
+            System.out.println();
             int option = scanner.nextInt();
             scanner.nextLine();
 
@@ -30,36 +40,32 @@ public class PetRegistry {
                 case 2 -> placeAnimalInClass();
                 case 3 -> seeAnimalCommands();
                 case 4 -> teachAnimalNewCommands();
-                case 5 -> {
+                case 5 -> seeAllAnimals();
+                case 6 -> {
                     System.out.println("Goodbye!");
                     return;
                 }
                 default -> System.out.println("Invalid option");
             }
 
-            System.out.println("Total number of animals: " + counter.getCount());
-            System.out.println("List of all animals:");
-            for (Animal animal : animalList) {
-                System.out.println(animal);
-            }
+//            System.out.println("Total number of animals: " + animalList.size());
+//            System.out.println("List of all animals:");
+//            for (Animal animal : animalList) {
+//                System.out.println(animal);
+//            }
         }
     }
 
     private static void addAnimal() {
-        ArrayList<String> cats = new ArrayList<>();
-        ArrayList<String> dogs = new ArrayList<>();
-        ArrayList<String> hamsters = new ArrayList<>();
-        ArrayList<String> donkeys = new ArrayList<>();
-        ArrayList<String> horses = new ArrayList<>();
-        ArrayList<String> allAnimals = new ArrayList<>();
+
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Please select animal's species:");
-        System.out.println("1 - Dog");
-        System.out.println("2 - Cat");
-        System.out.println("3 - Hamster");
-        System.out.println("4 - Horse");
-        System.out.println("5 - Donkey");
+        System.out.println("Please select animal's species by typing a number:");
+        System.out.println("1. Dog");
+        System.out.println("2. Cat");
+        System.out.println("3. Hamster");
+        System.out.println("4. Horse");
+        System.out.println("5. Donkey");
 
         int animalSpecies = scanner.nextInt();
 
@@ -67,6 +73,9 @@ public class PetRegistry {
         String name = scanner.next();
 
         System.out.println("Please enter the animal's date of birth (YYYY-MM-DD):");
+//        try {
+//
+//        }
         String dateOfBirth = scanner.next();
 
 
@@ -94,37 +103,31 @@ public class PetRegistry {
         System.out.println("Animal added successfully!");
 
         Animal animal = null;
-//        int id = counter.add();
 
         switch (animalSpecies) {
             case 1:
                 animal = new Dog(counter.getCount(), name, dateOfBirth, subtype, primaryCommand);
                 animal.addCommand(primaryCommand);
-                dogs.add(animal.toString());
                 animalList.add(animal);
                 break;
             case 2:
                 animal = new Cat(counter.getCount(), name, dateOfBirth, subtype, primaryCommand);
                 animal.addCommand(primaryCommand);
-                cats.add(animal.toString());
                 animalList.add(animal);
                 break;
             case 3:
                 animal = new Hamster(counter.getCount(), name, dateOfBirth, subtype, primaryCommand);
                 animal.addCommand(primaryCommand);
-                hamsters.add(animal.toString());
                 animalList.add(animal);
                 break;
             case 4:
                 animal = new Horse(counter.getCount(), name, dateOfBirth, subtype, primaryCommand);
                 animal.addCommand(primaryCommand);
-                horses.add(animal.toString());
                 animalList.add(animal);
                 break;
             case 5:
                 animal = new Donkey(counter.getCount(), name, dateOfBirth, subtype, primaryCommand);
                 animal.addCommand(primaryCommand);
-                donkeys.add(animal.toString());
                 animalList.add(animal);
                 break;
             default:
@@ -132,7 +135,7 @@ public class PetRegistry {
                 return;
         }
 
-        System.out.println("Total animals in the registry: " + allAnimals.size());
+        System.out.println("Total animals in the registry: " + animalList.size());
 
 
     }
@@ -153,39 +156,66 @@ public class PetRegistry {
     }
 
     private void teachAnimalNewCommands() {
-    }
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter the species of your animal: ");
+        String animalType = scanner.nextLine().toLowerCase();
+
+        System.out.println("Enter the animal's ID: ");
+        int animalID = Integer.parseInt(scanner.nextLine());
+
+        Animal animal = null;
+        System.out.println("Enter the new commands for the animal (separated by commas): ");
+        String newCommands = scanner.nextLine();
+
+        try {
+            animal = animalList.get(animalID);
+            animal.addCommand(Arrays.toString(newCommands.split(",")));
+            System.out.println("New commands added to " + animal.getName() + ".");
+            System.out.println();
+        } catch (Exception e) {
+            System.out.println("Animal not found!");
+            System.out.println(e.getMessage());
+        }
+}
 
     private void placeAnimalInClass() {
 
+        while(true){
+            System.out.println("Enter id of the animal to change its class: ");
+            Scanner scanner = new Scanner(System.in);
+            int scanID = scanner.nextInt();
+            Animal animal2 = animalList.get(scanID);
+            if (animal2 == null) {
+                System.out.println("This animal doesn't exist in the registry.");
+                return;
+            }else{
+                System.out.println("Your animal's class is: " + animalList.get(scanID).getSubType());
+                System.out.println("Change class:");
+                System.out.println("1 - yes");
+                System.out.println("2 - no");
+                int choice = scanner.nextInt();
+
+                if (animal2.subtype.equalsIgnoreCase("Domestic")) {
+                    animal2.subtype = "Pack";
+                    System.out.println("Your animal's class has been changed to: " + animalList.get(scanID).getSubType());
+                    return;
+                }else if(animal2.subtype.equalsIgnoreCase("Pack")) {
+                    animal2.subtype = "Domestic";
+                    System.out.println("Your animal's class has been changed to: " + animalList.get(scanID).getSubType());
+                    return;
+                }else{
+                    return;
+                }
+            }
+        }
+
     }
 
-//    private void seeAllAnimals() {
-//        System.out.println("All animals:");
-//        for (String d : dogs) {
-//            System.out.println(d.toString());
-//        }
-//        for (String c : cats) {
-//            System.out.println(c.toString());
-//        }
-//        for (String h : hamsters) {
-//            System.out.println(h.toString());
-//        }
-//        for (String h : horses) {
-//            System.out.println(h.toString());
-//        }
-//        for (String d : donkeys) {
-//            System.out.println(d.toString());
-//        }
-//    }
+    private void seeAllAnimals() {
+        System.out.println("List of all animals:");
+        for (Animal animal : animalList) {
+            System.out.println(animal.toString());
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-
-

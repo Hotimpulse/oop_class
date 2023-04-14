@@ -9,6 +9,7 @@ public class Animal {
     protected String commands;
     public ArrayList<String> commandList = new ArrayList<>();
 
+
     protected String subtype;
 
     public Animal(int id, String name, String dateOfBirth, String subtype) {
