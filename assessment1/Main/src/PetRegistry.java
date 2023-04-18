@@ -14,39 +14,38 @@ public class PetRegistry {
 
     private void run() {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("Please choose an option:");
-            System.out.println("1. Add a new animal");
-            System.out.println("2. Place the animal in the correct class");
-            System.out.println("3. See the list of commands that the animal executes");
-            System.out.println("4. Teach the animal new commands");
-            System.out.println("5. See all animals");
-            System.out.println("6. Exit");
-            System.out.println();
-            System.out.print("Enter your number here: ");
-            System.out.println();
-            int option = scanner.nextInt();
-            scanner.nextLine();
-
-            switch (option) {
-                case 1 -> addAnimal();
-                case 2 -> placeAnimalInClass();
-                case 3 -> seeAnimalCommands();
-                case 4 -> teachAnimalNewCommands();
-                case 5 -> seeAllAnimals();
-                case 6 -> {
-                    System.out.println("Goodbye!");
-                    return;
+            try {
+                while (true) {
+                    System.out.println("Please choose an option:");
+                    System.out.println("1. Add a new animal");
+                    System.out.println("2. Place the animal in the correct class");
+                    System.out.println("3. See the list of commands that the animal executes");
+                    System.out.println("4. Teach the animal new commands");
+                    System.out.println("5. See all animals");
+                    System.out.println("6. Exit");
+                    System.out.println();
+                    System.out.print("Enter your number here: ");
+                    System.out.println();
+                    int option = scanner.nextInt();
+                    scanner.nextLine();
+                    switch (option) {
+                        case 1 -> addAnimal();
+                        case 2 -> placeAnimalInClass();
+                        case 3 -> seeAnimalCommands();
+                        case 4 -> teachAnimalNewCommands();
+                        case 5 -> seeAllAnimals();
+                        case 6 -> {
+                            System.out.println("Goodbye!");
+                            return;
+                        }
+                        default -> System.out.println("Invalid option");
+                    }
                 }
-                default -> System.out.println("Invalid option");
+            }catch (Exception e) {
+                System.out.println("Input must be an integer! Try again.");
+                System.out.println(e.getMessage());
+                run();
             }
-
-//            System.out.println("Total number of animals: " + animalList.size());
-//            System.out.println("List of all animals:");
-//            for (Animal animal : animalList) {
-//                System.out.println(animal);
-//            }
-        }
     }
 
     private static void addAnimal() {
