@@ -240,8 +240,10 @@ h3 {
     align-items: center;
     margin: 0 auto;
 
-    width: 100%;
+    width: 1000px;
     height: 919px;
+
+    background: #b4b0b0;
 }
 
 .why__text-wrapper {
@@ -253,9 +255,6 @@ h3 {
     margin-top: 92px;
     margin-bottom: 55px;
     text-align: center;
-    background-color: #FAFAFA;
-
-    width: 100%;
 }
 
 .why-header{
@@ -282,7 +281,7 @@ h3 {
     justify-content: center;
     align-items: center;
 
-    width: 370px;
+    width: min(100% - 0rem, 370px);
     height: 549px;
 
     background-color: white;
@@ -291,18 +290,40 @@ h3 {
     font-size: 15px;
     line-height: 150%;
     color: #FAFAFA;
+
+    padding: 1rem;
+    margin-bottom: 100px;
 }
 
-.why-card1 > img,
-.why-card2 > img,
-.why-card3 > img {
+.why__card1,
+.why__card2,
+.why__card3 {
+    width: 100%;
     position: relative;
-    top: 1rem;
+    margin-bottom: 25px;
+    margin-top: -70px;
 }
 
 .why-card2 {
     background: #FFFFFF;
     box-shadow: 15px 25px 60px -5px rgba(0, 0, 0, 0.1);
+}
+
+.why__card1-header,
+.why__card2-header,
+.why__card3-header {
+    margin-bottom: 22px;
+}
+
+.why__card1-text,
+.why__card2-text,
+.why__card3-text {
+    color: #AAAAAA;
+    font-family: 'Gilroy-Medium';
+    font-size: 15px;
+    line-height: 150%;
+    text-align: center;
+    margin-bottom: 39px;
 }
 
 .why__card-button {
