@@ -140,10 +140,19 @@ h1 {
     margin: 0 auto;
 }
 
-h2 {
+.solution__header {
     font-family: 'Gilroy-Bold';
     font-size: 45px;
     line-height: 53px;
+    margin-bottom: 20px;
+    width: 409px;
+}
+
+.solution__paragraph {
+    font-family: 'Gilroy-Medium';
+    font-size: 16px;
+    line-height: 150%;
+    width: 515px;
 }
 
 .hero__logo-section {
@@ -170,6 +179,13 @@ h2 {
     height: 491px;
 }
 
+.benefits__header {
+    font-family: 'Gilroy-Bold';
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 17px;
+}
+
 .benefits-card1,
 .benefits-card2,
 .benefits-card3 {
@@ -188,18 +204,12 @@ h2 {
     padding: 1rem;
 }
 
-h3 {
-    font-family: 'Gilroy-Bold';
-    font-size: 24px;
-    line-height: 28px;
-    color: #000000;
-}
-
-.benefits-section > p {
-    font-family: 'Gilroy-Regular';
+.benefits__text {
+    font-family: 'Gilroy-Medium';
     font-size: 15px;
     line-height: 150%;
     color: #666666;
+    margin-bottom: 25px;
 }
 
 .benefits-card2 {
@@ -212,23 +222,31 @@ h3 {
     box-shadow: 15px 25px 56px 6px rgba(0, 0, 0, 0.06);         
 }
 
-.card1 {
+.benefits__card1-img {
     background: url(/seminar9_hw/assets/img/icon-red.svg);
 }
 
-.card2 {
+.benefits__card2-img {
     background: url(/seminar9_hw/assets/img/icon-green.svg);
 }
 
-.card3 {
+.benefits__card3-img {
     background: url(/seminar9_hw/assets/img/icon-yellow.svg);
 }
 
-.card1,
-.card2,
-.card3 {
+.benefits__card1-img,
+.benefits__card2-img,
+.benefits__card3-img {
     width: 70px;
     margin-bottom: 25px;
+}
+
+.benefits__button {
+    text-decoration: none;
+    font-family: 'Gilroy-Bold';
+    font-size: 11px;
+    line-height: 150%;
+    color: #000000;
 }
 
 // footer
@@ -259,12 +277,22 @@ h3 {
 
 .why-header{
     margin-bottom: 19px;
+    font-family: 'Gilroy-Bold';
+    font-size: 45px;
+    line-height: 53px;
+    
 }
 
 .why-paragraph {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 682px;
+    height: 48px;
+
     font-size: 16px;
     line-height: 150%;
+    text-align: center;
+
+    color: #666666;
 }
 
 .why__card-section {
