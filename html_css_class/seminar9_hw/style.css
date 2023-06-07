@@ -118,8 +118,11 @@ h1 {
 
 .solution-section {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 540px;
+    margin: 0 auto;
     background-color: #FAFAFA;
     
 }
@@ -137,7 +140,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     width: min(100% - 0rem, 522px);
-    margin: 0 auto;
+    margin-left: 8rem;
 }
 
 .solution__header {
@@ -193,9 +196,11 @@ h1 {
     flex-direction: column;
     justify-content: left;
     align-items: left;
+
     width: min(100% - 0rem, 310px);
     height: 226px;
     padding: 1rem;
+    margin-right: 60px;
 }
 
 .benefits-card1 > * :not(.card1),
@@ -249,19 +254,13 @@ h1 {
     color: #000000;
 }
 
-// footer
-
-.why-section {
+.why__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
 
-    width: 1000px;
-    height: 919px;
-
-    background: #b4b0b0;
+    background-color: #FAFAFA;
 }
 
 .why__text-wrapper {
@@ -280,7 +279,6 @@ h1 {
     font-family: 'Gilroy-Bold';
     font-size: 45px;
     line-height: 53px;
-    
 }
 
 .why-paragraph {
@@ -321,6 +319,7 @@ h1 {
 
     padding: 1rem;
     margin-bottom: 100px;
+    margin-right: 30px;
 }
 
 .why__card1,
