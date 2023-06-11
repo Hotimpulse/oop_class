@@ -61,7 +61,7 @@
 .hero-line-element {
     width: 12px;
     height: 92px;
-    background-color: orange;
+    background-color: #F16D7F;
 }
 
 .hero-logo-text-wrapper {
@@ -82,6 +82,10 @@
     font-weight: 700;
     font-size: 32px;
     line-height: 38px;
+}
+
+.final-word {
+    color: #F16D7F;
 }
 
 .tile-wrapper {
