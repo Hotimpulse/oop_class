@@ -1,0 +1,276 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header__navigation {
+    display: flex;
+    min(100% - 0rem, 1600px);
+    height: 75px;
+    background-color: #222222;
+}
+
+.header__logo {
+    width: 44px;
+    height: 38px;
+    margin-left: 231px;
+    margin-top: 18px;
+    cursor: pointer;
+}
+
+.header__glass {
+    width: 26px;
+
+    margin-left: 41px;
+    cursor: pointer;
+}
+
+.header__icon-set {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: -45rem;
+}
+
+.header__icon-set > * {
+    margin-right: 20px;
+    width: 32px;
+    height: 30px;
+
+    cursor: pointer;
+}
+
+.hero-section {
+    display: flex;
+    width: min(100% - 0rem, 1600px);
+    background-color: #F1E4E6;
+}
+
+.hero-section > img {
+    max-width: 100%;
+    
+}
+
+.hero-logo {
+    display: flex;
+    margin-top: 280px;
+}
+
+.hero-line-element {
+    width: 12px;
+    height: 92px;
+    background-color: orange;
+}
+
+.hero-logo-text-wrapper {
+    margin-left: 16px;
+}
+
+.logo-line1 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 58px;
+}
+
+.logo-line2 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 38px;
+}
+
+.tile-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.tile-section {
+    display: grid;
+    grid-template-columns: repeat(3, 360px);
+    justify-content: center;
+    margin: 0 auto;
+    gap: 30px;
+
+    width: min(100% - 0rem, 360px);
+    max-height: 260px;
+}
+
+.tile-section__tile1 > *:not(img),
+.tile-section__tile2 > *:not(img),
+.tile-section__tile3 > *:not(img) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 50%;
+}
+
+.tile-section__tile4 > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 9rem;
+}
+
+.tile-line1 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+
+
+.tile-line2 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+
+    color: #F16D7F;
+}
+
+
+.tile2-line1 {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.long-img {
+    margin-top: 30px;
+    max-width: 1140px;
+}
+
+.featured-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.featured-title {
+    margin-top: 96px;
+    margin-bottom: 6px;
+
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.featured-description {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #9F9F9F;
+
+    margin-bottom: 48px;
+}
+
+.featured-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    width: min(100% - 0rem, 1140px);
+
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+
+}
+
+.featured-card {
+    display: flex;
+    flex-direction: column;
+    width: min(100% - 0rem, 360px);
+
+    cursor: pointer;
+}
+
+
+.featured-card-title {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    margin-left: 16px;
+
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.featured-card-desc {
+    margin-bottom: 16px;
+    margin-left: 16px;
+    width: min(100% - 0rem, 315px);
+
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #5D5D5D;
+}
+
+.featured-card-price {
+    margin-bottom: 24px;
+    margin-left: 16px;
+
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #F16D7F;
+}
+
+.featured-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: min(100% - 0rem, 212px);
+    height: 48px;
+    border: 1px solid #FF6A6A;
+
+    background: none;
+    margin-top: 48px;
+    margin-bottom: 60px;
+
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #F26376;
+    cursor: pointer;
+}
