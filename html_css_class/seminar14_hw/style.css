@@ -50,7 +50,7 @@ body {
 .hero-section {
   display: flex;
   background-color: #f1e4e6;
-  max-width: 1600px;
+  width: min(100% - 0rem, 1600px);
   margin: 0 auto;
 }
 
@@ -220,7 +220,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 
-  width: 100%;
+  width: min(100% - 0rem, 1140px);
 
   justify-content: center;
   align-items: center;
@@ -330,12 +330,13 @@ body {
   }
 
   .hero-section {
-    max-width: 100%;
+    width: min(100% - 0rem, 768px);
     height: 368px;
   }
 
   .hero-section > img {
     max-width: 100%;
+    height: 368px;
   }
 
   .hero-logo {
