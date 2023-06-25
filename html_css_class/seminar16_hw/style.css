@@ -68,8 +68,8 @@
   height: 630px;
   
   position: absolute;
-  top: 4.6rem;
-  right: 3rem;
+  top: 0;
+  right: 0;
   border-radius: 1em;
 
   background-color: white;
@@ -1022,7 +1022,7 @@
 @media (width < 768px) {
 
   body {
-    padding: 1rem;
+    padding: 0 1rem;
   }
 
   .header__navigation {
