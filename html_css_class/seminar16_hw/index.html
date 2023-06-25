@@ -16,8 +16,34 @@
 
   <body>
     <header>
+      <div class="dropdown">
+        <h2 class="dropdown-headline">MENU</h2>
+        <ul class="menu-list">
+          <li class="menu-list__items">Man <br>
+            <a href="#">Accessories</a>
+            <a href="#">Bags</a>
+            <a href="#">Denim</a>
+            <a href="#">T-Shirts</a>
+          </li>
+          <li class="menu-list__items">Woman <br>
+            <a href="#">Accessories</a>
+            <a href="#">Jackets & Coats</a>
+            <a href="#">Polos</a>
+            <a href="#">T-Shirts</a>
+            <a href="#">Shirts</a>
+          </li>
+          <li class="menu-list__items">Kids <br>
+            <a href="#">Accessories</a>
+            <a href="#">Jackets & Coats</a>
+            <a href="#">Polos</a>
+            <a href="#">T-Shirts</a>
+            <a href="#">Shirts</a>
+            <a href="#">Bags</a>
+          </li>
+        </ul>
+      </div>
       <nav class="header__navigation">
-        <img src="./img/icons/logo.svg" alt="logo image" class="header__logo" />
+        <a href="./index.html"><img src="./img/icons/logo.svg" alt="logo image" class="header__logo"/></a>
         <img
           src="./img/icons/magnify.svg"
           alt="magnifying glass search button"
@@ -31,6 +57,7 @@
             class="profile-icon"
           />
           <img src="./img/icons/cart.svg" alt="cart icon" class="cart-icon" />
+          <div class="cart-item"></div>
         </div>
       </nav>
     </header>
@@ -160,8 +187,7 @@
       </div>
 
 
-      <button class="featured-btn">Browse All</button>
-
+      <a href="#"><button class="featured-btn">Browse All</button></a>
       <div class="additional-info">
         <div class="info info1">
           <span class="info-icon1"></span>

@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-body {
-  overflow-x: hidden;
-}
-
 .header__navigation {
   display: flex;
   width: 100%;
@@ -45,6 +41,77 @@ body {
   height: 30px;
 
   cursor: pointer;
+}
+
+.cart-item::before {
+  display: flex;
+  width: 20px;
+  height: 20px;
+
+  position: absolute;
+  top: -0.5rem;
+  right: 3rem;
+  border-radius: 1em;
+  background-color: #f26376;
+  content: "5";
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  z-index: 2;
+}
+
+.dropdown {
+  display: none;
+  flex-direction: column;
+  width: 232px;
+  height: 630px;
+  
+  position: absolute;
+  top: 4.6rem;
+  right: 3rem;
+  border-radius: 1em;
+
+  background-color: white;
+  justify-content: center;
+  align-items: left;
+  font-weight: bold;
+  z-index: 4;
+}
+
+.dropdown-headline {
+  padding: 1rem;
+  color: #000;
+  font-size: 0.875rem;
+  font-family: Lato;
+  font-weight: 700;
+}
+
+.menu-list__items {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  color: #f26376;
+  padding: 1rem;
+
+  color: #F16D7F;
+  font-size: 0.875rem;
+  font-family: Lato;
+
+}
+
+.menu-list__items > a {
+  text-decoration: none;
+  margin-left: 1rem;
+
+  color: #6F6E6E;
+  font-size: 0.875rem;
+  font-family: Lato;
+
+}
+
+.burger-icon:hover .dropdown {
+  display: flex;
 }
 
 .hero-section {
@@ -285,6 +352,7 @@ body {
   width: 32px;
   height: 29px;
   margin-right: 1rem;
+  position: relative;
 }
 
 .card-icon path {
@@ -951,9 +1019,9 @@ body {
 /* Mobile queries */
 
 @media (width < 768px) {
-  body,
-  html {
-    overflow-x: hidden;
+
+  body {
+    padding: 1rem;
   }
 
   .header__navigation {
@@ -979,6 +1047,11 @@ body {
   .cart-icon {
     display: none;
   }
+
+  .cart-item::before {
+    display: none;
+  }
+
 
   .hero-section {
     width: 100%;
