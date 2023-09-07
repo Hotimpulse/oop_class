@@ -1,0 +1,28 @@
+@keyframes slideout {
+  0% {
+    transform: translateY(-110%);
+    color: transparent;
+  }
+
+  100% {
+    transform: translateY(0);
+    color: black;
+  }
+}
+
+.animate_animated {
+  animation: slideout 0.3s ease-in-out;
+}
+
+.message {
+    visibility: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+
+.error {
+    border: 2px solid red;
+    background-color: hsla(0, 100%, 50%, 0.2);
+}
