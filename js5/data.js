@@ -13,32 +13,39 @@ wrapperDiv.appendChild(cardGrid);
 cardGrid.style.gridTemplateColumns = 'repeat(3, 1fr)';
 cardGrid.style.gridTemplateRows = 'repeat(4, 1fr)';
 
-async function populateCardsWithData() {
-    const response = await fetch(`https://api.artic.edu/api/v1/artworks`);
-    const data = await response.json();
-    // getting the images
-    for (let i = 0; i < data.data.length; i++) {
-        if (data.data[i].image_id !== null) {
-            imgArray.push(data.data[i].image_id);
+async function fetchCardsData() {
+    try {
+        const response = await fetch(`https://api.artic.edu/api/v1/artworks`);
+        if (!response.ok) {
+            throw new Error(`Ошибка получения данных с сервера`);
         }
-    }
+        const data = await response.json();
+        // getting the images
+        for (let i = 0; i < data.data.length; i++) {
+            if (data.data[i].image_id !== null) {
+                imgArray.push(data.data[i].image_id);
+            }
+        }
 
-    // getting the title and the artist's name
-    for (let i = 0; i < data.data.length; i++) {
-        const card = document.createElement('div');
-        card.setAttribute('id', 'card');
-        const title = document.createElement('span');
-        title.textContent = `${data.data[i].title}`;
-        card.appendChild(title);
-        const artistName = document.createElement('p');
-        artistName.textContent = `${data.data[i].artist_display}`;
-        const picture = document.createElement('img');
-        picture.setAttribute('id', 'picture');
-        picture.src = `${imgEndPoint}/${imgArray[i]}/${imgEndPoint2}`;
-        card.appendChild(picture);
-        card.appendChild(artistName);
-        cardGrid.appendChild(card);
+        // getting the title and the artist's name for the cards
+        for (let i = 0; i < data.data.length; i++) {
+            const card = document.createElement('div');
+            card.setAttribute('id', 'card');
+            const title = document.createElement('span');
+            title.textContent = `${data.data[i].title}`;
+            card.appendChild(title);
+            const artistName = document.createElement('p');
+            artistName.textContent = `${data.data[i].artist_display}`;
+            const picture = document.createElement('img');
+            picture.setAttribute('id', 'picture');
+            picture.src = `${imgEndPoint}/${imgArray[i]}/${imgEndPoint2}`;
+            card.appendChild(picture);
+            card.appendChild(artistName);
+            cardGrid.appendChild(card);
+        }
+    } catch (error) {
+        console.error(`Ошибка получения данных с сервера:`, error);
     }
 }
 
-populateCardsWithData();
+fetchCardsData();
