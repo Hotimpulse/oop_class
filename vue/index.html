@@ -3,13 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <title>Document</title>
-    <script src="https://unpkg.com/vue@3.0.2"></script>
   </head>
   <body>
     <div id="app">
-      <p>{{ title }}</p>
+      <p>{{ message }} {{count}}</p>
+      <div v-for="product in products" :key="product.id">
+        <h3>{{product.name}}</h3>
+        <button @click="increaseCount(product)">Increase</button>
+      </div>
+      <p v-show="newMessage">Text: {{newMessage}}</p>
+      <button @click="acceptAge">I am older than 14 years old</button>
+      <button @click="deniedAge">I am under 14 years old</button>
+
+      <button @click="show">Show more</button>
+      <p v-if="showDescription">{{hiddenContent}}</p>
+
+      <p>{{randomNumber}}</p>
+      <button @click="randomizeNumber">Randomize</button>
+      <p>{{printNumber}}</p>
     </div>
-    <script src="./index.js"></script>
+
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          helperText: ``,
+          randomNumber: 0,
+          showDescription: false,
+          hiddenContent: `Hidden content`,
+          isAllowed: false,
+          message: "Items in cart:",
+          count: 0,
+          products: [
+            {
+              id: Date.now(),
+              name: "Item 1",
+              inCart: false,
+            },
+            {
+              id: Date.now(),
+              name: "Item 2",
+              inCart: false,
+            },
+            {
+              id: Date.now(),
+              name: "Item 3",
+              inCart: false,
+            },
+            {
+              id: Date.now(),
+              name: "Item 4",
+              inCart: false,
+            },
+          ],
+        },
+        methods: {
+          increaseCount(item) {
+            if (!item.inCart) {
+              item.inCart = true;
+              this.count++;
+            }
+          },
+          acceptAge() {
+            this.isAllowed = true;
+          },
+          deniedAge() {
+            this.isAllowed = false;
+          },
+          show() {
+            this.showDescription = !this.showDescription;
+          },
+          randomizeNumber() {
+            this.randomNumber = Math.floor(Math.random() * 10 + 1);
+          },
+        },
+        computed: {
+          newMessage() {
+            return this.isAllowed
+              ? (this.newMessage = `Yes`)
+              : (this.newMessage = `No`);
+          },
+          printNumber() {
+            if (this.randomNumber === 10) {
+              return (this.helperText = `Your number is 10`);
+            } else {
+              return this.randomNumber < 5
+                ? (this.helperText = `Random number is less than 5`)
+                : (this.helperText = `Random number is greater than 4 and less than 10`);
+            }
+          },
+        },
+      });
+    </script>
   </body>
 </html>
