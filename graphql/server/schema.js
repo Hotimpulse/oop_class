@@ -18,8 +18,9 @@ export const schema = buildSchema(`
         id: ID
         username: String!
         age: Int!
-        posts: [Post]
+        posts: [PostInput]
     }
+
     input PostInput {
         id: ID
         title: String!
@@ -27,8 +28,12 @@ export const schema = buildSchema(`
     }
 
     type Query {
-        getAllUser: [User]
+        getAllUsers: [User]
         getUser(id: ID): User
+    }
+
+    type Mutation {
+        createUser(input: UserInput): User
     }
 `)
 
