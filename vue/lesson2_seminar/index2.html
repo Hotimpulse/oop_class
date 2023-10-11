@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="flipText">{{buttonText}}</button>
+
+      <ul>
+        <li
+          v-for="(item, index) in itemList"
+          :key="item.id"
+          @click="deleteItem(item.id)"
+        >
+          {{item.text}}
+        </li>
+      </ul>
+      <button @click="addItem">Add</button>
+    </div>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          buttonText: "Flip",
+          itemList: [],
+        },
+        methods: {
+          flipText() {
+            this.buttonText = this.buttonText.split("").reverse().join("");
+          },
+          addItem() {
+            const newItem = {
+              id: this.itemList.length + 1,
+              text: "New item " + (this.itemList.length + 1),
+            };
+            this.itemList.push(newItem);
+          },
+          deleteItem(id) {
+            this.itemList = this.itemList.filter((item) => item.id !== id);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
