@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <button @click="sortByPrice('ascending')">Ascending price</button>
+      <button @click="sortByPrice('descending')">Decending price</button>
+      <ul>
+        <li v-for="value in sortedArray">
+          {{value.item + ": " + value.price + "USD"}}
+        </li>
+      </ul>
+    </div>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          products: [
+            {
+              item: "shoes",
+              price: 200,
+            },
+            {
+              item: "hoodie",
+              price: 450,
+            },
+            {
+              item: "hat",
+              price: 100,
+            },
+          ],
+          sortOrder: "ascending",
+        },
+        computed: {
+          sortedArray() {
+            const arrayOfProducts = [...this.products];
+            arrayOfProducts.sort((a, b) => {
+              return this.sortOrder === "ascending"
+                ? a.price - b.price
+                : b.price - a.price;
+            });
+            return arrayOfProducts;
+          },
+        },
+        methods: {
+          sortByPrice(order) {
+            this.sortOrder = order;
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
