@@ -1,3 +1,153 @@
+.blog-hero_text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 503px;
+  height: 228px;
+  background: white;
+  border-radius: 2rem;
+  margin-top: -12.5rem;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 160px;
+}
+.blog-hero_header {
+  color: #292f36;
+  font-family: "DM Serif Display";
+  font-size: 3.125rem;
+  font-weight: 400;
+  line-height: 125%;
+  margin-top: -2rem;
+}
+.blog-hero_span {
+  color: #4d5053;
+  font-family: "Jost";
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.01375rem;
+}
+
+.blog-latest-post {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 150px;
+}
+.blog-latest-post_headline {
+  color: #292f36;
+  font-family: "DM Serif Display";
+  font-weight: 400;
+  font-size: 3.125rem;
+  line-height: 125%;
+  letter-spacing: 0.0625rem;
+}
+.blog-latest-post_wrapper {
+  display: flex;
+  gap: 4rem;
+  max-width: 1200px;
+  height: 522px;
+}
+.blog-latest-post_wrapper-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 463px;
+  margin-top: 4rem;
+}
+.blog-latest-post_wrapper-header {
+  color: #292f36;
+  font-family: "DM Serif Display";
+  font-size: 1.5625rem;
+  line-height: 125%;
+  letter-spacing: 0.03125rem;
+  margin-bottom: 1.4rem;
+}
+.blog-latest-post_wrapper-text {
+  color: #4d5053;
+  font-family: "Jost";
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.01375rem;
+  margin-bottom: 2rem;
+}
+.blog-latest-post_wrapper-text_2 {
+  color: #4d5053;
+  font-family: "Jost";
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.01375rem;
+  margin-bottom: 2rem;
+}
+.blog-latest-post_wrapper-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 489px;
+}
+.blog-latest-post_wrapper-line-text {
+  color: #4d5053;
+  font-family: Jost;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.01rem;
+  text-transform: capitalize;
+}
+.blog-latest-post_wrapper-line-btn {
+  justify-content: center;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 10rem;
+  border: none;
+  background: #f4f0ec;
+  cursor: pointer;
+}
+.blog-latest-post_wrapper-line-btn:hover {
+  background-color: rgba(77, 80, 83, 0.7137254902);
+}
+
+#blog-articles-news-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 41px;
+}
+
+.blog-news-paggination {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 200px;
+}
+.blog-news-paggination_round-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  flex-shrink: 0;
+  border-radius: 10rem;
+  border: 1px solid #cda274;
+  transition: all 0.3s ease-in-out;
+}
+.blog-news-paggination_round-btn:hover {
+  background-color: #f4f0ec;
+  border: none;
+  cursor: pointer;
+}
+.blog-news-paggination_span {
+  color: #292f36;
+  font-family: Jost;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 150%;
+  text-transform: capitalize;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,11 +156,11 @@
 
 @font-face {
   font-family: "DM Serif Display";
-  src: url("./fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf");
+  src: url("../fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf");
 }
 @font-face {
   font-family: "Jost";
-  src: url("./fonts/Jost/Jost-VariableFont_wght.ttf");
+  src: url("../fonts/Jost/Jost-VariableFont_wght.ttf");
 }
 .wrapper {
   margin: 0 auto;
@@ -297,10 +447,33 @@ main {
   height: 521px;
   border-radius: 62px;
   background-color: #e7e7e7;
-  padding: 1rem;
+  padding: 1.5rem;
+  margin-top: 1rem;
 }
 .articles-news-card_img {
+  height: 289px;
   margin-bottom: 21px;
+}
+.articles-news-card_plaque {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7.75rem;
+  height: 2.5625rem;
+  flex-shrink: 0;
+  border-radius: 0.5rem 0.5rem 0.5rem 0rem;
+  background: #fff;
+  color: #4d5053;
+  font-family: Jost;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 0.01rem;
+  text-transform: capitalize;
+  position: relative;
+  margin-top: -5rem;
+  margin-left: 1rem;
+  margin-bottom: 2rem;
 }
 .articles-news-card_header {
   color: #292f36;
@@ -418,4 +591,4 @@ main {
   font-weight: 400;
   line-height: 150%;
   letter-spacing: 0.01375rem;
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=index.css.map */

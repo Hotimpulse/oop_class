@@ -6,12 +6,12 @@
 
 @font-face {
   font-family: "DM Serif Display";
-  src: url("./fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf");
+  src: url("../fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf");
 }
 
 @font-face {
   font-family: "Jost";
-  src: url("./fonts/Jost/Jost-VariableFont_wght.ttf");
+  src: url("../fonts/Jost/Jost-VariableFont_wght.ttf");
 }
 
 .wrapper {
@@ -307,10 +307,35 @@ main {
   height: 521px;
   border-radius: 62px;
   background-color: #e7e7e7;
-  padding: 1rem;
+  padding: 1.5rem;
+  margin-top: 1rem;
 
   &_img {
+    height: 289px;
     margin-bottom: 21px;
+  }
+  &_plaque {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7.75rem;
+    height: 2.5625rem;
+    flex-shrink: 0;
+    border-radius: 0.5rem 0.5rem 0.5rem 0rem;
+    background: #fff;
+
+    color: #4d5053;
+    font-family: Jost;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.01rem;
+    text-transform: capitalize;
+
+    position: relative;
+    margin-top: -5rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
   }
   &_header {
     color: #292f36;
