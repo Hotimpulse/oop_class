@@ -1,3 +1,5 @@
+@use "../mixins/mixins";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,17 +17,16 @@
 }
 
 .wrapper {
-  margin: 0 auto;
+  @include mixins.centerFlex;
+  flex-direction: column;
+  max-width: 1920px;
 }
 
 .header-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
+  @include mixins.centerFlex;
   margin-top: 44px;
 
-  width: min(100% - 0rem, 1200px);
+  width: 100%;
   height: 50px;
   margin-bottom: 57px;
   &_text {
@@ -34,12 +35,13 @@
     font-size: 2.5rem;
     line-height: 125%;
   }
+  & a {
+    text-decoration: none;
+  }
 }
 
 .header-wrapper-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mixins.centerFlex;
   &_svg {
     width: 2.12488rem;
     height: 2.125rem;
@@ -48,7 +50,7 @@
 }
 
 nav {
-  display: flex;
+  @include mixins.centerFlex;
   & li {
     list-style: none;
     padding: 1rem;
@@ -56,10 +58,8 @@ nav {
     & a {
       text-decoration: none;
       color: #292f36;
-      text-align: center;
       font-family: Jost;
       font-size: 1.25rem;
-      font-style: normal;
       font-weight: 400;
       line-height: 125%;
     }
@@ -377,10 +377,10 @@ main {
 }
 
 .footer {
-  display: flex;
-  width: min(100% - 0rem, 1200px);
+  @include mixins.centerFlex;
+  align-items: flex-start;
+  padding: 0 5rem;
   gap: 200px;
-  margin: 0 auto;
   margin-bottom: 120px;
   &_column {
     display: flex;

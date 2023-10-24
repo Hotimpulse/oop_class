@@ -1,11 +1,17 @@
+@use "../mixins/mixins";
+
+.blog-main {
+  @include mixins.centerFlex;
+}
+
 .blog-hero {
+  & img {
+    width: 100%;
+  }
   &_text-wrapper {
-    display: flex;
+    @include mixins.centerFlex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    width: 503px;
+    max-width: 503px;
     height: 228px;
     background: white;
     border-radius: 2rem;
