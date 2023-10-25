@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./components/Blog.js"></script>
+    <script src="./components/Article.js"></script>
+    <script src="./components/TagSystem.js"></script>
+
     <link rel="stylesheet" href="./styles/index.css" />
     <title>Blog Details</title>
   </head>
@@ -31,34 +35,9 @@
         <div class="details-hero">
           <img src="./imgs/details_banner.jpg" alt="blog banner image" />
         </div>
+
         <div class="details-special">
-          <section class="details-latest-post">
-            <div class="details-latest-post1">
-              <h1 class="details-latest-post1_headline">
-                Let’s Get Solution for Building Construction Work
-              </h1>
-              <img
-                class="details-latest-post1_wrapper-img"
-                src="./imgs/kitchen_dets1.png"
-                alt="latest post kitchen"
-              />
-              <div class="details-latest-post1_wrapper-breadcrumbs">
-                <span class="details-latest-post1_date">26 December, 2022</span>
-                <span class="details-latest-post1_breadcrumbs">
-                  Interior / Home / Decore
-                </span>
-              </div>
-            </div>
-            <p class="details-latest-post1_text">
-              Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
-              turpmaximus.posuere in.Contrary to popular belief.There are many
-              variations of passages of Lorem Ipsum available, but the majority
-              have suffered alteration in some form, by injecthumour, or
-              randomised words which don't look even slightly believable.
-              Embarrassing hidden in the middle of text. All the Lorem Ipsum
-              generators on the Internet tend to repeat predefined chunks as
-              necessary.
-            </p>
+          <section id="details-posts">
             <div class="details-breaker">
               <object
                 class="details-breaker_svg"
@@ -69,63 +48,9 @@
                 >The details are not the details. They make the design.</span
               >
             </div>
-            <div class="details-latest-post2">
-              <h1 class="details-latest-post2_headline">
-                Design sprints are great
-              </h1>
-              <p class="details-latest-post2_text">
-                Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
-                turpmaximus.posuere in.Contrary to popular belief.There are many
-                variations of passages of Lorem Ipsum available, but the
-                majority have suffered.
-              </p>
-              <div class="details-latest-post2_text-wrapper">
-                <span class="details-latest-post2_text">1</span>
-                <span class="details-latest-post2_text">
-                  Contrary to popular belief.There are many variations of
-                  passages of Lorem Ipsum available, but the majority have
-                  suffered.
-                </span>
-              </div>
-              <div class="details-latest-post2_text-wrapper">
-                <span class="details-latest-post2_text">2</span>
-                <span class="details-latest-post2_text">
-                  Contrary to popular belief.There are many variations of
-                  passages of Lorem Ipsum available, but the majority have
-                  suffered.
-                </span>
-              </div>
-              <div class="details-latest-post2_text-wrapper">
-                <span class="details-latest-post2_text">3</span>
-                <span class="details-latest-post2_text">
-                  Contrary to popular belief.There are many variations of
-                  passages of Lorem Ipsum available, but the majority have
-                  suffered.
-                </span>
-              </div>
-              <img
-                class="details-latest-post2_wrapper-img"
-                src="./imgs/kitchen_dets2.png"
-                alt="image of a kitchen"
-              />
-              <span class="details-latest-post2_text">
-                Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae
-                turpmaximus.posuere in.Contrary to popular belief.There are many
-                variations of passages of Lorem Ipsum available, but the
-                majority have suffered.
-              </span>
-            </div>
+
+            <Blog class="blog" />
           </section>
-          <aside class="details-tags">
-            <h2 class="details_header">Tags</h2>
-            <div class="btn-grid">
-              <button class="details-tags_btn">Kitchen</button>
-              <buttopn class="details-tags_btn">Bedroom</buttopn>
-              <buttopn class="details-tags_btn">Building</buttopn>
-              <buttopn class="details-tags_btn">Architecture</buttopn>
-              <buttopn class="details-tags_btn">Kitchen Planning</buttopn>
-            </div>
-          </aside>
         </div>
       </main>
 
@@ -176,5 +101,10 @@
         </div>
       </footer>
     </div>
+    <script>
+      new Vue({
+        el: "#details-posts",
+      });
+    </script>
   </body>
 </html>
