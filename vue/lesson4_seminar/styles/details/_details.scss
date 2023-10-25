@@ -1,24 +1,24 @@
 @use "../mixins/mixins";
 
-.main_details {
-  @include mixins.centerFlex;
-}
-
 .details-hero {
+  @include mixins.centerFlex;
+  // max-width: 1920px;
+
   margin-bottom: 200px;
-  & img {
+  &_img {
     width: 100%;
-    object-fit: contain;
   }
 }
 
 .details-special {
   @include mixins.centerFlex;
+  align-items: flex-start;
+  gap: 2rem;
   flex-direction: column;
 }
 
-.blog {
-  margin-bottom: 96px;
+aside {
+  margin-bottom: 2rem;
 }
 
 .details-latest-post {
@@ -137,10 +137,4 @@
     line-height: 125%;
     letter-spacing: 0.03125rem;
   }
-}
-
-.details-special {
-  @include mixins.centerFlex;
-  align-items: flex-start;
-  gap: 1rem;
 }

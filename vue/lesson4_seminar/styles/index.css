@@ -1,10 +1,3 @@
-.blog-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
 .blog-hero img {
   width: 100%;
 }
@@ -178,7 +171,9 @@
   align-items: center;
   margin: 0 auto;
   flex-direction: column;
-  max-width: 1920px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 5rem;
 }
 
 .header-wrapper {
@@ -218,6 +213,7 @@ nav {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  padding: 0 5rem;
 }
 nav li {
   list-style: none;
@@ -234,10 +230,11 @@ nav li a {
 
 main {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  flex-direction: column;
+  padding: 0 5rem;
 }
 
 .hero {
@@ -538,9 +535,9 @@ main {
   align-items: center;
   margin: 0 auto;
   align-items: flex-start;
-  padding: 0 5rem;
   gap: 200px;
   margin-bottom: 120px;
+  padding: 0 5rem;
 }
 .footer_column {
   display: flex;
@@ -616,20 +613,15 @@ main {
   letter-spacing: 0.01375rem;
 }
 
-.main_details {
+.details-hero {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-}
-
-.details-hero {
   margin-bottom: 200px;
 }
-.details-hero img {
+.details-hero_img {
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
 }
 
 .details-special {
@@ -637,11 +629,13 @@ main {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  align-items: flex-start;
+  gap: 2rem;
   flex-direction: column;
 }
 
-.blog {
-  margin-bottom: 96px;
+aside {
+  margin-bottom: 2rem;
 }
 
 .details-latest-post_wrapper-img {
@@ -755,13 +749,4 @@ main {
   font-style: italic;
   line-height: 125%;
   letter-spacing: 0.03125rem;
-}
-
-.details-special {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  align-items: flex-start;
-  gap: 1rem;
 }/*# sourceMappingURL=index.css.map */

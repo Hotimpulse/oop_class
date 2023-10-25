@@ -1,9 +1,5 @@
 @use "../mixins/mixins";
 
-.blog-main {
-  @include mixins.centerFlex;
-}
-
 .blog-hero {
   & img {
     width: 100%;

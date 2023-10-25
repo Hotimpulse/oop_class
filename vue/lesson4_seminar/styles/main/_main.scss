@@ -19,7 +19,8 @@
 .wrapper {
   @include mixins.centerFlex;
   flex-direction: column;
-  max-width: 1920px;
+  width: fit-content;
+  padding: 0 5rem;
 }
 
 .header-wrapper {
@@ -51,6 +52,7 @@
 
 nav {
   @include mixins.centerFlex;
+  padding: 0 5rem;
   & li {
     list-style: none;
     padding: 1rem;
@@ -67,11 +69,10 @@ nav {
 }
 
 main {
-  display: flex;
+  @include mixins.centerFlex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
+  padding: 0 5rem;
+
 }
 
 .hero {
@@ -134,6 +135,7 @@ main {
       box-shadow: 1px 1px 4px 1px rgba(#292f36, 0.2);
     }
   }
+
 }
 
 .follow-projects {
@@ -379,9 +381,9 @@ main {
 .footer {
   @include mixins.centerFlex;
   align-items: flex-start;
-  padding: 0 5rem;
   gap: 200px;
   margin-bottom: 120px;
+  padding: 0 5rem;
   &_column {
     display: flex;
     flex-direction: column;
