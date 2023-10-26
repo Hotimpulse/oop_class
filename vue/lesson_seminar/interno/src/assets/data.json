@@ -1,0 +1,274 @@
+{
+  "cards": [
+    {
+      "type": "div",
+      "class": "articles-news-card",
+      "children": [
+        {
+          "type": "img",
+          "class": "articles-news-card_img",
+          "src": "./imgs/card_kitchen1.png",
+          "alt": "photo of a kitchen"
+        },
+        {
+          "type": "div",
+          "class": "articles-news-card_plaque",
+          "text": "Kitchen Design"
+        },
+        {
+          "type": "h3",
+          "class": "articles-news-card_header",
+          "text": "Let’s Get Solution For Building Construction Work"
+        },
+        {
+          "type": "div",
+          "class": "articles-news-card_wrapper",
+          "children": [
+            {
+              "type": "p",
+              "class": "articles-news-card_text",
+              "text": "26 December, 2022"
+            },
+            {
+              "type": "button",
+              "class": "articles-news-card_btn",
+              "children": [
+                {
+                  "type": "img",
+                  "class": "follow-projects_grid-card_btn-arrow",
+                  "src": "./imgs/arrow_circle.svg",
+                  "alt": "pointer arrow icon"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "div",
+      "class": "articles-news-card",
+      "children": [
+        {
+          "type": "img",
+          "class": "articles-news-card_img",
+          "src": "./imgs/card_kitchen2.png",
+          "alt": "photo of a kitchen"
+        },
+        {
+          "type": "div",
+          "class": "articles-news-card_plaque",
+          "text": "Living Design"
+        },
+        {
+          "type": "h3",
+          "class": "articles-news-card_header",
+          "text": "Low Cost Latest Invented Interior Designing Ideas."
+        },
+        {
+          "type": "div",
+          "class": "articles-news-card_wrapper",
+          "children": [
+            {
+              "type": "p",
+              "class": "articles-news-card_text",
+              "text": "26 December, 2022"
+            },
+            {
+              "type": "button",
+              "class": "articles-news-card_btn",
+              "children": [
+                {
+                  "type": "img",
+                  "class": "follow-projects_grid-card_btn-arrow",
+                  "src": "./imgs/arrow_circle.svg",
+                  "alt": "pointer arrow icon"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "div",
+      "class": "articles-news-card",
+      "children": [
+        {
+          "type": "img",
+          "class": "articles-news-card_img",
+          "src": "./imgs/card_kitchen3.png",
+          "alt": "photo of a kitchen"
+        },
+        {
+          "type": "div",
+          "class": "articles-news-card_plaque",
+          "text": "Interior Design"
+        },
+        {
+          "type": "h3",
+          "class": "articles-news-card_header",
+          "text": "Best For Any Office & Business Interior Solution"
+        },
+        {
+          "type": "div",
+          "class": "articles-news-card_wrapper",
+          "children": [
+            {
+              "type": "p",
+              "class": "articles-news-card_text",
+              "text": "26 December, 2022"
+            },
+            {
+              "type": "button",
+              "class": "articles-news-card_btn",
+              "children": [
+                {
+                  "type": "img",
+                  "class": "follow-projects_grid-card_btn-arrow",
+                  "src": "./imgs/arrow_circle.svg",
+                  "alt": "pointer arrow icon"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "div",
+      "class": "articles-news-card",
+      "children": [
+        {
+          "type": "img",
+          "class": "articles-news-card_img",
+          "src": "./imgs/card_kitchen4.png",
+          "alt": "photo of a kitchen"
+        },
+        {
+          "type": "div",
+          "class": "articles-news-card_plaque",
+          "text": "Kitchen Design"
+        },
+        {
+          "type": "h3",
+          "class": "articles-news-card_header",
+          "text": "Let’s Get Solution For Building Construction Work"
+        },
+        {
+          "type": "div",
+          "class": "articles-news-card_wrapper",
+          "children": [
+            {
+              "type": "p",
+              "class": "articles-news-card_text",
+              "text": "26 December, 2022"
+            },
+            {
+              "type": "button",
+              "class": "articles-news-card_btn",
+              "children": [
+                {
+                  "type": "img",
+                  "class": "follow-projects_grid-card_btn-arrow",
+                  "src": "./imgs/arrow_circle.svg",
+                  "alt": "pointer arrow icon"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "div",
+      "class": "articles-news-card",
+      "children": [
+        {
+          "type": "img",
+          "class": "articles-news-card_img",
+          "src": "./imgs/card_kitchen5.png",
+          "alt": "photo of a kitchen"
+        },
+        {
+          "type": "div",
+          "class": "articles-news-card_plaque",
+          "text": "Living Design"
+        },
+        {
+          "type": "h3",
+          "class": "articles-news-card_header",
+          "text": "Low Cost Latest Invented Interior Designing Ideas."
+        },
+        {
+          "type": "div",
+          "class": "articles-news-card_wrapper",
+          "children": [
+            {
+              "type": "p",
+              "class": "articles-news-card_text",
+              "text": "22 December, 2022"
+            },
+            {
+              "type": "button",
+              "class": "articles-news-card_btn",
+              "children": [
+                {
+                  "type": "img",
+                  "class": "follow-projects_grid-card_btn-arrow",
+                  "src": "./imgs/arrow_circle.svg",
+                  "alt": "pointer arrow icon"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "div",
+      "class": "articles-news-card",
+      "children": [
+        {
+          "type": "img",
+          "class": "articles-news-card_img",
+          "src": "./imgs/card_kitchen6.png",
+          "alt": "photo of a kitchen"
+        },
+        {
+          "type": "div",
+          "class": "articles-news-card_plaque",
+          "text": "Interior Design"
+        },
+        {
+          "type": "h3",
+          "class": "articles-news-card_header",
+          "text": "Best For Any Office & Business Interior Solution"
+        },
+        {
+          "type": "div",
+          "class": "articles-news-card_wrapper",
+          "children": [
+            {
+              "type": "p",
+              "class": "articles-news-card_text",
+              "text": "25 December, 2022"
+            },
+            {
+              "type": "button",
+              "class": "articles-news-card_btn",
+              "children": [
+                {
+                  "type": "img",
+                  "class": "follow-projects_grid-card_btn-arrow",
+                  "src": "./imgs/arrow_circle.svg",
+                  "alt": "pointer arrow icon"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
