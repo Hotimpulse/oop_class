@@ -19,6 +19,7 @@
 
 <script>
 export default {
+  name: 'TagSystem',
   props: ["tags", "selectedTag"],
   methods: {
     filterByTag(tag) {
