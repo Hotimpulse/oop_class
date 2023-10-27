@@ -5,7 +5,7 @@
       @filter="filterByTag"
       :selectedTag="selectedTag"
     />
-    <Article
+    <ArticleComp
       v-for="article in displayedArticles"
       :key="article.title"
       :title="article.title"
@@ -17,10 +17,12 @@
 
 <script>
 import TagSystem from "./TagSystem.vue";
+import ArticleComp from "./ArticleComp.vue";
 
 export default {
   components: {
     TagSystem,
+    ArticleComp,
   },
   data() {
     return {
@@ -29,35 +31,35 @@ export default {
           title: "Design sprints are great for Architecture",
           content:
             "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus...",
-          imgSrc: "./imgs/kitchen_dets4.png",
+          imgSrc: require("./../assets/imgs/kitchen_dets4.png"),
           tags: ["architecture", "all"],
         },
         {
           title: "Let’s Get Solutions for Building Bedrooms",
           content:
             "Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpmaximus.posuere in.",
-          imgSrc: "./imgs/kitchen_dets3.png",
+          imgSrc: require("./../assets/imgs/kitchen_dets3.png"),
           tags: ["building", "bedroom", "all"],
         },
         {
           title: "Are you into Kitchen Planning?",
           content:
             "Contrary to popular belief.There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injecthumour, or randomised words which don't look even slightly believable. Embarrassing hidden in the middle of text.",
-          imgSrc: "./imgs/kitchen_dets1.png",
+          imgSrc: require("./../assets/imgs/kitchen_dets1.png"),
           tags: ["kitchen", "kitchen planning", "all"],
         },
         {
           title: "Enjoy stellar architecture? Look no further!",
           content:
             "All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary.",
-          imgSrc: "./imgs/kitchen_dets5.png",
+          imgSrc: require("./../assets/imgs/kitchen_dets5.png"),
           tags: ["architecture", "all"],
         },
         {
           title: "Building a 4-bedroom house? Manage your expenses!",
           content:
             "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, excepturi!",
-          imgSrc: "./imgs/kitchen_dets2.png",
+          imgSrc: require("./../assets/imgs/kitchen_dets2.png"),
           tags: ["building", "bedroom", "all"],
         },
       ],

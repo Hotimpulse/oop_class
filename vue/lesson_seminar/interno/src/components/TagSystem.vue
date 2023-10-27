@@ -1,12 +1,12 @@
 <template>
-  <aside :class="$style['details-tags']">
+  <aside :class="$style.details_tags">
     <h2 :class="$style.details_header">Tags</h2>
     <div :class="$style['btn-grid']">
       <button
         v-for="tag in tags"
         :class="{
-          '$style.details-tags_btn': true,
-          '$style.active': tag === selectedTag,
+          [$style.btn]: true,
+          [$style.active]: tag === selectedTag,
         }"
         :key="tag"
         @click="filterByTag(tag)"
@@ -33,32 +33,34 @@ export default {
 aside {
   margin-bottom: 2rem;
 }
-.details-tags {
+.details_tags {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   max-width: 420px;
   height: 200px;
-  &_btn {
-    max-width: 200px;
-    border-radius: 0.625rem;
-    background-color: #f4f0ec;
-    border: none;
+  margin-bottom: 2rem;
+}
 
-    color: #292f36;
-    text-align: center;
-    font-family: Jost;
-    font-size: 1.125rem;
-    line-height: 125%;
-    letter-spacing: 0.0225rem;
+.btn {
+  max-width: 200px;
+  border-radius: 0.625rem;
+  background-color: #f4f0ec;
+  border: none;
 
-    padding: 0.5625rem 1.875rem;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      background: #292f36;
-      cursor: pointer;
-      color: white;
-    }
+  color: #292f36;
+  text-align: center;
+  font-family: Jost;
+  font-size: 1.125rem;
+  line-height: 125%;
+  letter-spacing: 0.0225rem;
+
+  padding: 0.5625rem 1.875rem;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: #292f36;
+    cursor: pointer;
+    color: white;
   }
 }
 

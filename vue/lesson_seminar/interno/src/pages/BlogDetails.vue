@@ -22,13 +22,10 @@
               >The details are not the details. They make the design.</span
             >
           </div>
-
-          <BlogComp />
-          <ArticleComp />
-          <TagSystem />
         </section>
       </div>
     </main>
+    <BlogComp />
     <FooterComponent />
   </div>
 </template>
@@ -37,8 +34,6 @@
 import FooterComponent from "../components/FooterComponent.vue";
 import HeaderComponent from "../components/HeaderComponent.vue";
 import BlogComp from "../components/BlogComp.vue";
-import ArticleComp from "../components/ArticleComp.vue";
-import TagSystem from "../components/TagSystem.vue";
 
 export default {
   name: "IndexPage",
@@ -46,8 +41,6 @@ export default {
     FooterComponent,
     HeaderComponent,
     BlogComp,
-    ArticleComp,
-    TagSystem
   },
 };
 </script>
@@ -67,6 +60,14 @@ export default {
   flex-direction: column;
   width: fit-content;
   padding: 0 5rem;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 2rem;
 }
 .details-hero {
   @include centerFlex;
@@ -142,35 +143,35 @@ aside {
   }
 }
 
-.details-tags {
+.details_tags {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   max-width: 420px;
   height: 200px;
-  &_btn {
-    max-width: 200px;
-    border-radius: 0.625rem;
-    background-color: #f4f0ec;
-    border: none;
-
-    color: #292f36;
-    text-align: center;
-    font-family: Jost;
-    font-size: 1.125rem;
-    line-height: 125%;
-    letter-spacing: 0.0225rem;
-
-    padding: 0.5625rem 1.875rem;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      background: #292f36;
-      cursor: pointer;
-      color: white;
-    }
-  }
 }
 
+.details_tags_btn {
+  max-width: 200px;
+  border-radius: 0.625rem;
+  background-color: #f4f0ec;
+  border: none;
+
+  color: #292f36;
+  text-align: center;
+  font-family: Jost;
+  font-size: 1.125rem;
+  line-height: 125%;
+  letter-spacing: 0.0225rem;
+
+  padding: 0.5625rem 1.875rem;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: #292f36;
+    cursor: pointer;
+    color: white;
+  }
+}
 .active {
   background: #292f36;
   color: white;
@@ -193,7 +194,6 @@ aside {
   border-radius: 3.125rem;
   background: #f4f0ec;
   margin-bottom: 2rem;
-
 }
 .details-breaker-text {
   color: #cda274;
