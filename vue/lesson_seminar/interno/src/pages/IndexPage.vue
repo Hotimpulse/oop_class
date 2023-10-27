@@ -1,45 +1,47 @@
 <template>
-  <div class="wrapper">
+  <div :class="$style.wrapper">
     <HeaderComponent />
     <main>
-      <section class="hero">
-        <img src="./../assets/imgs/hero.png" alt="main hero image" />
-        <h1 class="hero_header">Let Your Home Be Unique</h1>
-        <p class="hero_paragraph">
-          There are many variations of the passages of lorem Ipsum available,
-          majority.
-        </p>
-        <button class="hero_btn">
-          Get Started
-          <img src="./../assets/imgs/arrow.svg" alt="arrow icon" />
-        </button>
+      <section :class="$style.hero">
+        <div :class="$style['hero-wrapper']">
+          <img src="./../assets/imgs/hero.png" alt="main hero image" />
+          <h1 :class="$style.hero_header">Let Your Home Be Unique</h1>
+          <p :class="$style.hero_paragraph">
+            There are many variations of the passages of lorem Ipsum available,
+            majority.
+          </p>
+          <button :class="$style.hero_btn">
+            Get Started
+            <img src="./../assets/imgs/arrow.svg" alt="arrow icon" />
+          </button>
+        </div>
       </section>
 
-      <section class="follow-projects">
-        <div class="follow-projects_text-wrapper">
-          <h2 class="follow-projects_text-wrapper_header">
+      <section :class="$style['follow-projects']">
+        <div :class="$style['follow-projects_text-wrapper']">
+          <h2 :class="$style['follow-projects_text-wrapper_header']">
             Follow Our Projects
           </h2>
-          <p class="follow-projects_text-wrapper_text">
+          <p :class="$style['follow-projects_text-wrapper_text']">
             It is a long established fact that a reader will be distracted by
             the readable content of the page, focusing on its layout points.
           </p>
         </div>
-        <div class="follow-projects_grid">
-          <div class="follow-projects_grid-card">
+        <div :class="$style['follow-projects_grid']">
+          <div :class="$style['follow-projects_grid-card']">
             <img
-              class="follow-projects_grid-card_img"
+              :class="$style['follow-projects_grid-card_img']"
               src="./../assets/imgs/kitchen1.png"
               alt="photo of a kitchen"
             />
-            <div class="follow-projects_grid-card_wrapper">
-              <div class="follow-projects_text-wrap">
+            <div :class="$style['follow-projects_grid-card_wrapper']">
+              <div :class="$style['follow-projects_text-wrap']">
                 <h3>Modern Kitchen</h3>
                 <p>Decor / Artchitecture</p>
               </div>
-              <button class="follow-projects_grid-card_btn">
+              <button :class="$style['follow-projects_grid-card_btn']">
                 <img
-                  class="follow-projects_grid-card_btn-arrow"
+                  :class="$style['follow-projects_grid-card_btn-arrow']"
                   src="./../assets/imgs/arrow_circle.svg"
                   alt="pointer arrow icon"
                 />
@@ -47,60 +49,60 @@
             </div>
           </div>
 
-          <div class="follow-projects_grid-card">
+          <div :class="$style['follow-projects_grid-card']">
             <img
-              class="follow-projects_grid-card_img"
+              :class="$style['follow-projects_grid-card_img']"
               src="./../assets/imgs/kitchen2.png"
               alt="photo of a kitchen"
             />
-            <div class="follow-projects_grid-card_wrapper">
-              <div class="follow-projects_text-wrap">
+            <div :class="$style['follow-projects_grid-card_wrapper']">
+              <div :class="$style['follow-projects_text-wrap']">
                 <h3>Modern Kitchen</h3>
                 <p>Decor / Artchitecture</p>
               </div>
-              <button class="follow-projects_grid-card_btn">
+              <button :class="$style['follow-projects_grid-card_btn']">
                 <img
-                  class="follow-projects_grid-card_btn-arrow"
+                  :class="$style['follow-projects_grid-card_btn-arrow']"
                   src="./../assets/imgs/arrow_circle.svg"
                   alt="pointer arrow icon"
                 />
               </button>
             </div>
           </div>
-          <div class="follow-projects_grid-card">
+          <div :class="$style['follow-projects_grid-card']">
             <img
-              class="follow-projects_grid-card_img"
+              :class="$style['follow-projects_grid-card_img']"
               src="./../assets/imgs/kitchen3.png"
               alt="photo of a kitchen"
             />
-            <div class="follow-projects_grid-card_wrapper">
-              <div class="follow-projects_text-wrap">
+            <div :class="$style['follow-projects_grid-card_wrapper']">
+              <div :class="$style['follow-projects_text-wrap']">
                 <h3>Modern Kitchen</h3>
                 <p>Decor / Artchitecture</p>
               </div>
-              <button class="follow-projects_grid-card_btn">
+              <button :class="$style['follow-projects_grid-card_btn']">
                 <img
-                  class="follow-projects_grid-card_btn-arrow"
+                  :class="$style['follow-projects_grid-card_btn-arrow']"
                   src="./../assets/imgs/arrow_circle.svg"
                   alt="pointer arrow icon"
                 />
               </button>
             </div>
           </div>
-          <div class="follow-projects_grid-card">
+          <div :class="$style['follow-projects_grid-card']">
             <img
-              class="follow-projects_grid-card_img"
+              :class="$style['follow-projects_grid-card_img']"
               src="./../assets/imgs/kitchen4.png"
               alt="photo of a kitchen"
             />
-            <div class="follow-projects_grid-card_wrapper">
-              <div class="follow-projects_text-wrap">
+            <div :class="$style['follow-projects_grid-card_wrapper']">
+              <div :class="$style['follow-projects_text-wrap']">
                 <h3>Modern Kitchen</h3>
                 <p>Decor / Artchitecture</p>
               </div>
-              <button class="follow-projects_grid-card_btn">
+              <button :class="$style['follow-projects_grid-card_btn']">
                 <img
-                  class="follow-projects_grid-card_btn-arrow"
+                  :class="$style['follow-projects_grid-card_btn-arrow']"
                   src="./../assets/imgs/arrow_circle.svg"
                   alt="pointer arrow icon"
                 />
@@ -110,54 +112,58 @@
         </div>
       </section>
 
-      <section class="stats">
-        <div class="stats_point">
+      <section :class="$style.stats">
+        <div :class="$style.stats_point">
           12
-          <span class="stats_text">Years Of Experience</span>
+          <span :class="$style.stats_text">Years Of Experience</span>
         </div>
-        <span class="stats_line"></span>
-        <div class="stats_point">
+        <span :class="$style.stats_line"></span>
+        <div :class="$style.stats_point">
           85
 
-          <span class="stats_text">Success Projects</span>
+          <span :class="$style.stats_text">Success Projects</span>
         </div>
-        <span class="stats_line"></span>
-        <div class="stats_point">
+        <span :class="$style.stats_line"></span>
+        <div :class="$style.stats_point">
           15
 
-          <span class="stats_text">Active Projects</span>
+          <span :class="$style.stats_text">Active Projects</span>
         </div>
-        <span class="stats_line"></span>
-        <div class="stats_point">
+        <span :class="$style.stats_line"></span>
+        <div :class="$style.stats_point">
           95
 
-          <span class="stats_text">Happy Customers</span>
+          <span :class="$style.stats_text">Happy Customers</span>
         </div>
       </section>
 
-      <section class="articles-news">
-        <h2 class="articles-news_header">Articles & News</h2>
-        <p class="articles-news_text">
+      <section :class="$style['articles-news']">
+        <h2 :class="$style['articles-news_header']">Articles & News</h2>
+        <p :class="$style['articles-news_text']">
           It is a long established fact that a reader will be distracted by the
           of readable content of a page when lookings at its layouts the points
           of using.
         </p>
-        <div class="articles-news-container">
-          <div class="articles-news-card">
+        <div :class="$style['articles-news-container']">
+          <div :class="$style['articles-news-card']">
             <img
-              class="articles-news-card_img"
+              :class="$style['articles-news-card_img']"
               src="./../assets/imgs/card_kitchen1.png"
               alt="photo of a kitchen"
             />
-            <div class="articles-news-card_plaque">Kitchen Design</div>
-            <h3 class="articles-news-card_header">
+            <div :class="$style['articles-news-card_plaque']">
+              Kitchen Design
+            </div>
+            <h3 :class="$style['articles-news-card_header']">
               Let’s Get Solution For Building Construction Work
             </h3>
-            <div class="articles-news-card_wrapper">
-              <p class="articles-news-card_text">26 December, 2022</p>
-              <button class="articles-news-card_btn">
+            <div :class="$style['articles-news-card_wrapper']">
+              <p :class="$style['articles-news-card_text']">
+                26 December, 2022
+              </p>
+              <button :class="$style['articles-news-card_btn']">
                 <img
-                  class="follow-projects_grid-card_btn-arrow"
+                  :class="$style['follow-projects_grid-card_btn-arrow']"
                   src="./../assets/imgs/arrow_circle.svg"
                   alt="pointer arrow icon"
                 />
@@ -165,21 +171,25 @@
             </div>
           </div>
 
-          <div class="articles-news-card">
+          <div :class="$style['articles-news-card']">
             <img
-              class="articles-news-card_img"
+              :class="$style['articles-news-card_img']"
               src="./../assets/imgs/card_kitchen2.png"
               alt="photo of a kitchen"
             />
-            <div class="articles-news-card_plaque">Living Design</div>
-            <h3 class="articles-news-card_header">
+            <div :class="$style['articles-news-card_plaque']">
+              Living Design
+            </div>
+            <h3 :class="$style['articles-news-card_header']">
               Low Cost Latest Invented Interior Designing Ideas.
             </h3>
-            <div class="articles-news-card_wrapper">
-              <p class="articles-news-card_text">22 December, 2022</p>
-              <button class="articles-news-card_btn">
+            <div :class="$style['articles-news-card_wrapper']">
+              <p :class="$style['articles-news-card_text']">
+                22 December, 2022
+              </p>
+              <button :class="$style['articles-news-card_btn']">
                 <img
-                  class="follow-projects_grid-card_btn-arrow"
+                  :class="$style['follow-projects_grid-card_btn-arrow']"
                   src="./../assets/imgs/arrow_circle.svg"
                   alt="pointer arrow icon"
                 />
@@ -187,21 +197,25 @@
             </div>
           </div>
 
-          <div class="articles-news-card">
+          <div :class="$style['articles-news-card']">
             <img
-              class="articles-news-card_img"
+              :class="$style['articles-news-card_img']"
               src="./../assets/imgs/card_kitchen3.png"
               alt="photo of a kitchen"
             />
-            <div class="articles-news-card_plaque">Interior Design</div>
-            <h3 class="articles-news-card_header">
+            <div :class="$style['articles-news-card_plaque']">
+              Interior Design
+            </div>
+            <h3 :class="$style['articles-news-card_header']">
               Best For Any Office & Business Interior Solution
             </h3>
-            <div class="articles-news-card_wrapper">
-              <p class="articles-news-card_text">25 December, 2022</p>
-              <button class="articles-news-card_btn">
+            <div :class="$style['articles-news-card_wrapper']">
+              <p :class="$style['articles-news-card_text']">
+                25 December, 2022
+              </p>
+              <button :class="$style['articles-news-card_btn']">
                 <img
-                  class="follow-projects_grid-card_btn-arrow"
+                  :class="$style['follow-projects_grid-card_btn-arrow']"
                   src="./../assets/imgs/arrow_circle.svg"
                   alt="pointer arrow icon"
                 />
@@ -216,70 +230,31 @@
 </template>
 
 <script>
-import FooterComponent from "./FooterComponent.vue";
-import HeaderComponent from "./HeaderComponent.vue";
+import HeaderComponent from "../components/HeaderComponent.vue";
+import FooterComponent from "../components/FooterComponent.vue";
 
 export default {
   name: "IndexPage",
   components: {
-    FooterComponent,
     HeaderComponent,
+    FooterComponent,
   },
 };
 </script>
 
-<style lang="scss" scope>
-@import "./../assets/styles/mixins/_mixins.scss";
+<style lang="scss" module>
+@mixin centerFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
 .wrapper {
   @include centerFlex;
   flex-direction: column;
   width: fit-content;
   padding: 0 5rem;
-}
-
-.header-wrapper {
-  @include centerFlex;
-  margin-top: 44px;
-
-  width: 100%;
-  height: 50px;
-  margin-bottom: 57px;
-  &_text {
-    color: #292f36;
-    font-family: "DM Serif Display";
-    font-size: 2.5rem;
-    line-height: 125%;
-  }
-  & a {
-    text-decoration: none;
-  }
-}
-
-.header-wrapper-logo {
-  @include centerFlex;
-  &_svg {
-    width: 2.12488rem;
-    height: 2.125rem;
-    margin-right: 1rem;
-  }
-}
-
-nav {
-  @include centerFlex;
-  padding: 0 5rem;
-  & li {
-    list-style: none;
-    padding: 1rem;
-
-    & a {
-      text-decoration: none;
-      color: #292f36;
-      font-family: Jost;
-      font-size: 1.25rem;
-      font-weight: 400;
-      line-height: 125%;
-    }
-  }
 }
 
 main {
@@ -327,6 +302,8 @@ main {
     border-radius: 18px;
     border: none;
 
+    margin-top: 1rem;
+
     text-align: center;
     font-family: Jost;
     font-size: 1.125rem;
@@ -348,6 +325,11 @@ main {
       box-shadow: 1px 1px 4px 1px rgba(#292f36, 0.2);
     }
   }
+}
+
+.hero-wrapper {
+  display: flex;
+  gap: 1rem;
 }
 
 .follow-projects {
@@ -587,87 +569,6 @@ main {
     &:hover {
       background-color: #4d505373;
     }
-  }
-}
-
-.footer {
-  @include centerFlex;
-  align-items: flex-start;
-  gap: 200px;
-  margin-bottom: 120px;
-  padding: 0 5rem;
-  &_column {
-    display: flex;
-    flex-direction: column;
-  }
-  &_logo-wrapper {
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 18px;
-  }
-  &_logo {
-    width: 34px;
-    height: 34px;
-  }
-  &_logo-text {
-    color: #292f36;
-    font-family: "DM Serif Display";
-    font-size: 2.5rem;
-    font-weight: 400;
-    line-height: 125%;
-  }
-  &_logo-description {
-    width: 393px;
-    color: #4d5053;
-    font-family: Jost;
-    font-size: 1.375rem;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: 0.01375rem;
-    margin-bottom: 31px;
-  }
-  &_svg-wrapper {
-    display: flex;
-    gap: 1rem;
-    width: 225px;
-  }
-  &_footer_twitter-logo {
-    width: 18px;
-    height: 22px;
-  }
-  &_footer_li-logo {
-    width: 18px;
-    height: 22px;
-  }
-  &_header {
-    margin-bottom: 20px;
-    font-family: "DM Serif Display";
-    font-size: 1.5625rem;
-    font-weight: 400;
-    line-height: 125%;
-  }
-  &_list {
-    list-style: none;
-    color: #4d5053;
-    font-family: Jost;
-    font-size: 1.375rem;
-    font-weight: 400;
-    line-height: 300%;
-    letter-spacing: 0.01375rem;
-    & a {
-      text-decoration: none;
-      color: #292f36;
-    }
-  }
-  &_text {
-    color: #4d5053;
-    font-family: Jost;
-    font-size: 1.375rem;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: 0.01375rem;
   }
 }
 </style>

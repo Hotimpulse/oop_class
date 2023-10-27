@@ -1,52 +1,53 @@
 <template>
-  <footer class="$style.footer">
-    <div class="$style.footer_column">
-      <div class="$style.footer_logo-wrapper">
+  <footer :class="$style.footer">
+    <div :class="$style['footer_column']">
+      <div :class="$style['footer_logo-wrapper']">
         <img
-          class="$style.footer_logo"
+          :class="$style['footer_logo']"
           src="./../assets/imgs/Logo.svg"
           alt="logo"
         />
-        <span class="$style.footer_logo-text">Interno</span>
+        <span :class="$style['footer_logo-text']">Interno</span>
       </div>
-      <p class="$style.footer_logo-description">
+      <p :class="$style['footer_logo-description']">
         It is a long established fact that a reader will be distracted while
         browsing.
       </p>
-      <div class="$style.footer_svg-wrapper">
-        <object
-          class="$style.footer_twitter-logo"
-          data="./../assets/imgs/twitter_icon.svg"
-          type="image/svg+xml"
-        ></object>
-        <object
-          class="$style.footer_li-logo"
-          data="./../assets/imgs/linkedin_icon.svg"
-          type="image/svg+xml"
-        ></object>
+
+      <div :class="$style['footer_svg-wrapper']">
+        <img
+          :class="$style['footer_twitter-logo']"
+          src="./../assets/imgs/twitter_icon.svg"
+          alt="Twitter Logo"
+        />
+        <img
+          :class="$style['footer_li-logo']"
+          src="./../assets/imgs/linkedin_icon.svg"
+          alt="LinkedIn Logo"
+        />
       </div>
     </div>
 
-    <div class="$style.footer_column">
-      <h4 class="$style.footer_header">Pages</h4>
-      <li class="$style.footer_list">
+    <div :class="$style.footer_column">
+      <h4 :class="$style.footer_header">Pages</h4>
+      <li :class="$style.footer_list">
         <a href="./../pages/index.html">Home</a>
       </li>
-      <li class="$style.footer_list">
+      <li :class="$style.footer_list">
         <a href="#">Project</a>
       </li>
-      <li class="$style.footer_list">
+      <li :class="$style.footer_list">
         <a href="./../pages/blog.html">Blog</a>
       </li>
     </div>
 
-    <div class="$style.footer_column">
-      <h4 class="$style.footer_header">Contact</h4>
-      <p class="$style.footer_text">
+    <div :class="$style.footer_column">
+      <h4 :class="$style.footer_header">Contact</h4>
+      <p :class="$style.footer_text">
         55 East Birchwood Ave. Brooklyn, New York 11201
       </p>
-      <p class="$style.footer_text">contact@interno.com</p>
-      <p class="$style.footer_text">(123) 456 - 7890</p>
+      <p :class="$style.footer_text">contact@interno.com</p>
+      <p :class="$style.footer_text">(123) 456 - 7890</p>
     </div>
   </footer>
 </template>
@@ -54,7 +55,6 @@
 <script>
 export default {
   name: "FooterComponent",
-  components: {},
 };
 </script>
 
@@ -62,8 +62,8 @@ export default {
 .footer {
   display: flex;
   justify-content: center;
-  margin: 0 auto;
   align-items: flex-start;
+  margin: 0 auto;
   gap: 200px;
   margin-bottom: 120px;
   padding: 0 5rem;

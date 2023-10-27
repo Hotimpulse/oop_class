@@ -1,16 +1,83 @@
-@use "../mixins/mixins";
+<template>
+  <div :class="$style.wrapper">
+    <HeaderComponent />
+    <main>
+      <div :class="$style['details-hero']">
+        <img
+          :class="$style['details-hero-img']"
+          src="./../assets/imgs/details_banner.jpg"
+          alt="blog banner image"
+        />
+      </div>
 
+      <div :class="$style['details-special']">
+        <section id="details-posts">
+          <div :class="$style['details-breaker']">
+            <img
+              :class="$style['details-breaker-svg']"
+              src="./../assets/imgs/double-quotes.svg"
+              alt="logo"
+            />
+            <span :class="$style['details-breaker-text']"
+              >The details are not the details. They make the design.</span
+            >
+          </div>
+
+          <BlogComp />
+          <ArticleComp />
+          <TagSystem />
+        </section>
+      </div>
+    </main>
+    <FooterComponent />
+  </div>
+</template>
+
+<script>
+import FooterComponent from "../components/FooterComponent.vue";
+import HeaderComponent from "../components/HeaderComponent.vue";
+import BlogComp from "../components/BlogComp.vue";
+import ArticleComp from "../components/ArticleComp.vue";
+import TagSystem from "../components/TagSystem.vue";
+
+export default {
+  name: "IndexPage",
+  components: {
+    FooterComponent,
+    HeaderComponent,
+    BlogComp,
+    ArticleComp,
+    TagSystem
+  },
+};
+</script>
+
+<style lang="scss" module>
+@mixin centerFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-direction: column;
+  width: fit-content;
+  padding: 0 5rem;
+}
 .details-hero {
-  @include mixins.centerFlex;
-
+  @include centerFlex;
   margin-bottom: 200px;
-  &_img {
-    width: 100%;
-  }
+}
+.details-hero-img {
+  width: 100%;
 }
 
 .details-special {
-  @include mixins.centerFlex;
+  @include centerFlex;
   align-items: flex-start;
   gap: 2rem;
   flex-direction: column;
@@ -118,7 +185,7 @@ aside {
 .details-breaker {
   display: flex;
   flex-direction: column;
-  width: 49.9375rem;
+  width: 799px;
   padding: 3.3125rem 14.1875rem;
   flex-direction: column;
   align-items: center;
@@ -127,13 +194,14 @@ aside {
   background: #f4f0ec;
   margin-bottom: 2rem;
 
-  &_text {
-    color: #cda274;
-    text-align: center;
-    font-family: "DM Serif Display";
-    font-size: 1.5625rem;
-    font-style: italic;
-    line-height: 125%;
-    letter-spacing: 0.03125rem;
-  }
 }
+.details-breaker-text {
+  color: #cda274;
+  text-align: center;
+  font-family: "DM Serif Display";
+  font-size: 1.5625rem;
+  font-style: italic;
+  line-height: 125%;
+  letter-spacing: 0.03125rem;
+}
+</style>

@@ -1,43 +1,43 @@
 <template>
-  <div class="wrapper">
-    <HeaderComponent />
+  <HeaderComponent />
+  <div :class="$style.wrapper">
     <main>
-      <section class="blog-hero">
+      <section :class="$style['blog-hero']">
         <img src="./../assets/imgs/blog-banner.jpg" alt="blog banner image" />
-        <div class="blog-hero_text-wrapper">
-          <h1 class="blog-hero_header">Articles & News</h1>
-          <span class="blog-hero_span">Home / Blog</span>
+        <div :class="$style['blog-hero_text-wrapper']">
+          <h1 :class="$style['blog-hero_header']">Articles & News</h1>
+          <span :class="$style['blog-hero_span']">Home / Blog</span>
         </div>
       </section>
 
-      <section class="blog-latest-post">
-        <h1 class="blog-latest-post_headline">Latest Post</h1>
-        <div class="blog-latest-post_wrapper">
+      <section :class="$style['blog-latest-post']">
+        <h1 :class="$style['blog-latest-post_headline']">Latest Post</h1>
+        <div :class="$style['blog-latest-post_wrapper']">
           <img
-            class="blog-latest-post_wrapper-img"
+            :class="$style['blog-latest-post_wrapper-img']"
             src="./../assets/imgs/latest-post.png"
             alt="latest post kitchen"
           />
-          <div class="blog-latest-post_wrapper-text-wrapper">
-            <p class="blog-latest-post_wrapper-header">
+          <div :class="$style['blog-latest-post_wrapper-text-wrapper']">
+            <p :class="$style['blog-latest-post_wrapper-header']">
               Low Cost Latest Invented Interior Designing Ideas
             </p>
-            <p class="blog-latest-post_wrapper-text">
+            <p :class="$style['blog-latest-post_wrapper-text']">
               Lorem ipsum dolor sit amet, adipiscing Aliquam eu sem vitae turpis
               dignissim maximus.posuere in.Contrary to popular belief.
             </p>
-            <p class="blog-latest-post_wrapper-text_2">
+            <p :class="$style['blog-latest-post_wrapper-text_2']">
               Lorem Ipsum is not simply random text. It has roots in a piece of
               classica.
             </p>
 
-            <div class="blog-latest-post_wrapper-line">
-              <span class="blog-latest-post_wrapper-line-text"
+            <div :class="$style['blog-latest-post_wrapper-line']">
+              <span :class="$style['blog-latest-post_wrapper-line-text']"
                 >26 December, 2022</span
               >
-              <button class="blog-latest-post_wrapper-line-btn">
+              <button :class="$style['blog-latest-post_wrapper-line-btn']">
                 <img
-                  class="follow-projects_grid-card_btn-arrow"
+                  :class="$style['follow-projects_grid-card_btn-arrow']"
                   src="./../assets/imgs/arrow_circle.svg"
                   alt="pointer arrow icon"
                 />
@@ -47,31 +47,31 @@
         </div>
       </section>
 
-      <section class="articles-news">
-        <h2 class="articles-news_header">Articles & News</h2>
+      <section :class="$style['articles-news']">
+        <h2 :class="$style['articles-news_header']">Articles & News</h2>
 
         <div id="blog-articles-news-container">
-          <div v-for="(card, index) in cards" :key="index" :class="card.class">
+          <div v-for="(card, index) in cards" :key="index" :class="$style.card.class">
             <template v-for="(value, key) in card.children">
               <template v-if="key !== 'children'">
                 <component
                   v-if="value.type !== 'htmlContent'"
                   :is="value.type"
-                  :class="value.class"
+                  :class="$style.value.class"
                   :src="value.src"
                   :alt="value.alt"
                   :key="key"
                 ></component>
                 <span
                   v-else-if="value.type === 'htmlContent'"
-                  :class="value.class"
+                  :class="$style.value.class"
                   v-html="value.text"
                   :key="`level1_${index}_${value.text}`"
                 ></span>
               </template>
               <div
                 v-else-if="key === 'children'"
-                :class="value.class"
+                :class="$style.value.class"
                 :key="`levelas1_${index}_${value.text}`"
               >
                 <template v-for="(child, childIndex) in value">
@@ -79,14 +79,14 @@
                     <component
                       v-if="child.type !== 'htmlContent'"
                       :is="child.type"
-                      :class="child.class"
+                      :class="$style.child.class"
                       :src="child.src"
                       :alt="child.alt"
                       :key="childIndex"
                     ></component>
                     <span
                       v-else-if="child.type === 'htmlContent'"
-                      :class="child.class"
+                      :class="$style.child.class"
                       v-html="child.text"
                       :key="`level2_${index}_${childIndex}`"
                     ></span>
@@ -98,7 +98,7 @@
                     "
                     :key="childIndex"
                   >
-                    <div :class="child.class">
+                    <div :class="$style.child.class">
                       <template
                         v-for="(grandchild, grandIndex) in child.children"
                       >
@@ -106,14 +106,14 @@
                           <component
                             v-if="grandchild.type !== 'htmlContent'"
                             :is="grandchild.type"
-                            :class="grandchild.class"
+                            :class="$style.grandchild.class"
                             :src="grandchild.src"
                             :alt="grandchild.alt"
                             :key="grandIndex"
                           ></component>
                           <span
                             v-else-if="grandchild.type === 'htmlContent'"
-                            :class="grandchild.class"
+                            :class="$style.grandchild.class"
                             v-html="grandchild.text"
                             :key="`level3_${index}_${childIndex}_${grandIndex}`"
                           ></span>
@@ -128,17 +128,17 @@
         </div>
       </section>
 
-      <div class="blog-news-paggination">
-        <div class="blog-news-paggination_round-btn">
-          <span class="blog-news-paggination_span">01</span>
+      <div :class="$style['blog-news-paggination']">
+        <div :class="$style['blog-news-paggination_round-btn']">
+          <span :class="$style['blog-news-paggination_span']">01</span>
         </div>
-        <div class="blog-news-paggination_round-btn">
-          <span class="blog-news-paggination_span">02</span>
+        <div :class="$style['blog-news-paggination_round-btn']">
+          <span :class="$style['blog-news-paggination_span']">02</span>
         </div>
-        <div class="blog-news-paggination_round-btn">
-          <span class="blog-news-paggination_span">03</span>
+        <div :class="$style['blog-news-paggination_round-btn']">
+          <span :class="$style['blog-news-paggination_span']">03</span>
         </div>
-        <div class="blog-news-paggination_round-btn">
+        <div :class="$style['blog-news-paggination_round-btn']">
           <img
             src="./../assets/imgs/arrow_circle.svg"
             alt="circular btn arrow"
@@ -146,13 +146,13 @@
         </div>
       </div>
     </main>
-    <FooterComponent />
   </div>
+  <FooterComponent />
 </template>
 
 <script>
-import FooterComponent from "./FooterComponent.vue";
-import HeaderComponent from "./HeaderComponent.vue";
+import FooterComponent from "../components/FooterComponent.vue";
+import HeaderComponent from "../components/HeaderComponent.vue";
 
 export default {
   name: "BlogPage",
@@ -184,8 +184,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scope>
-@import "./../assets/styles/mixins/_mixins.scss";
+<style lang="scss" module>
+@mixin centerFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
 
 .blog-hero {
   & img {
