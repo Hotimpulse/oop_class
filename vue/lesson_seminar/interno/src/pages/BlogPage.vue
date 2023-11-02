@@ -1,14 +1,8 @@
 <template>
   <HeaderComponent />
   <div :class="$style.wrapper">
+    <BannerComp :name="Articles & News" />
     <main>
-      <section :class="$style['blog-hero']">
-        <img src="./../assets/imgs/blog-banner.jpg" alt="blog banner image" />
-        <div :class="$style['blog-hero_text-wrapper']">
-          <h1 :class="$style['blog-hero_header']">Articles & News</h1>
-          <span :class="$style['blog-hero_span']">Home / Blog</span>
-        </div>
-      </section>
 
       <section :class="$style['blog-latest-post']">
         <h1 :class="$style['blog-latest-post_headline']">Latest Post</h1>
@@ -50,28 +44,32 @@
       <section :class="$style['articles-news']">
         <h2 :class="$style['articles-news_header']">Articles & News</h2>
 
-        <div id="blog-articles-news-container">
-          <div v-for="(card, index) in cards" :key="index" :class="$style.card.class">
+        <div :class="$style['blog-articles-news-container']">
+          <div
+            v-for="(card, index) in cards"
+            :key="index"
+            :class="$style[card.class]"
+          >
             <template v-for="(value, key) in card.children">
               <template v-if="key !== 'children'">
                 <component
                   v-if="value.type !== 'htmlContent'"
                   :is="value.type"
-                  :class="$style.value.class"
-                  :src="value.src"
+                  :class="$style[card.class]"
+                  :src="value.src.startsWith('/') ? value.src : `/assets${value.src}`"
                   :alt="value.alt"
                   :key="key"
                 ></component>
                 <span
                   v-else-if="value.type === 'htmlContent'"
-                  :class="$style.value.class"
+                  :class="$style[value.class]"
                   v-html="value.text"
                   :key="`level1_${index}_${value.text}`"
                 ></span>
               </template>
               <div
                 v-else-if="key === 'children'"
-                :class="$style.value.class"
+                :class="$style[value.class]"
                 :key="`levelas1_${index}_${value.text}`"
               >
                 <template v-for="(child, childIndex) in value">
@@ -79,14 +77,14 @@
                     <component
                       v-if="child.type !== 'htmlContent'"
                       :is="child.type"
-                      :class="$style.child.class"
-                      :src="child.src"
+                      :class="$style[child.class]"
+                      :src="child.src.startsWith('/') ? child.src : `/assets${child.src}`"
                       :alt="child.alt"
                       :key="childIndex"
                     ></component>
                     <span
                       v-else-if="child.type === 'htmlContent'"
-                      :class="$style.child.class"
+                      :class="$style[child.class]"
                       v-html="child.text"
                       :key="`level2_${index}_${childIndex}`"
                     ></span>
@@ -98,7 +96,7 @@
                     "
                     :key="childIndex"
                   >
-                    <div :class="$style.child.class">
+                    <div :class="$style[child.class]">
                       <template
                         v-for="(grandchild, grandIndex) in child.children"
                       >
@@ -106,14 +104,14 @@
                           <component
                             v-if="grandchild.type !== 'htmlContent'"
                             :is="grandchild.type"
-                            :class="$style.grandchild.class"
-                            :src="grandchild.src"
+                            :class="$style[grandchild.class]"
+                            :src="grandchild.src.startsWith('/') ? grandchild.src : `/assets${grandchild.src}`"
                             :alt="grandchild.alt"
                             :key="grandIndex"
                           ></component>
                           <span
                             v-else-if="grandchild.type === 'htmlContent'"
-                            :class="$style.grandchild.class"
+                            :class="$style[grandchild.class]"
                             v-html="grandchild.text"
                             :key="`level3_${index}_${childIndex}_${grandIndex}`"
                           ></span>
@@ -128,23 +126,7 @@
         </div>
       </section>
 
-      <div :class="$style['blog-news-paggination']">
-        <div :class="$style['blog-news-paggination_round-btn']">
-          <span :class="$style['blog-news-paggination_span']">01</span>
-        </div>
-        <div :class="$style['blog-news-paggination_round-btn']">
-          <span :class="$style['blog-news-paggination_span']">02</span>
-        </div>
-        <div :class="$style['blog-news-paggination_round-btn']">
-          <span :class="$style['blog-news-paggination_span']">03</span>
-        </div>
-        <div :class="$style['blog-news-paggination_round-btn']">
-          <img
-            src="./../assets/imgs/arrow_circle.svg"
-            alt="circular btn arrow"
-          />
-        </div>
-      </div>
+      <PaginationComponent :items="['01', '02', '03']" />
     </main>
   </div>
   <FooterComponent />
@@ -153,14 +135,18 @@
 <script>
 import FooterComponent from "../components/FooterComponent.vue";
 import HeaderComponent from "../components/HeaderComponent.vue";
+import BannerComp from "@/components/BannerComp.vue";
+import PaginationComp from "@/components/PaginationComp.vue";
 
 export default {
   name: "BlogPage",
   components: {
     FooterComponent,
     HeaderComponent,
+    BannerComp,
+    PaginationComp
   },
-  el: "#blog-articles-news-container",
+  el: ".blog-articles-news-container",
   data: function () {
     return {
       cards: [],
@@ -171,7 +157,7 @@ export default {
   },
   methods: {
     fetchData() {
-      fetch("data.json")
+      fetch("./data.json")
         .then((response) => response.json())
         .then((data) => {
           this.cards = data.cards;
@@ -192,38 +178,11 @@ export default {
   margin: 0 auto;
 }
 
-.blog-hero {
-  & img {
-    width: 100%;
-  }
-  &_text-wrapper {
-    @include centerFlex;
-    flex-direction: column;
-    max-width: 503px;
-    height: 228px;
-    background: white;
-    border-radius: 2rem;
-    margin-top: -12.5rem;
-    position: relative;
-    z-index: 2;
-    margin-bottom: 160px;
-  }
-  &_header {
-    color: #292f36;
-    font-family: "DM Serif Display";
-    font-size: 3.125rem;
-    font-weight: 400;
-    line-height: 125%;
-    margin-top: -2rem;
-  }
-  &_span {
-    color: #4d5053;
-    font-family: "Jost";
-    font-size: 1.375rem;
-    font-weight: 400;
-    line-height: 150%;
-    letter-spacing: 0.01375rem;
-  }
+.wrapper {
+  @include centerFlex;
+  flex-direction: column;
+  width: fit-content;
+  padding: 0 5rem;
 }
 
 .blog-latest-post {
@@ -308,40 +267,10 @@ export default {
   }
 }
 
-#blog-articles-news-container {
+.blog-articles-news-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-bottom: 41px;
-}
-
-.blog-news-paggination {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 200px;
-  &_round-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 3.25rem;
-    height: 3.25rem;
-    flex-shrink: 0;
-    border-radius: 10rem;
-    border: 1px solid #cda274;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      background-color: #f4f0ec;
-      border: none;
-      cursor: pointer;
-    }
-  }
-  &_span {
-    color: #292f36;
-    font-family: Jost;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 150%;
-    text-transform: capitalize;
-  }
 }
 </style>

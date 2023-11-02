@@ -7,7 +7,7 @@
         {
           "type": "img",
           "class": "articles-news-card_img",
-          "src": "./imgs/card_kitchen1.png",
+          "src": "/assets/imgs/card_kitchen1.png",
           "alt": "photo of a kitchen"
         },
         {
@@ -36,7 +36,7 @@
                 {
                   "type": "img",
                   "class": "follow-projects_grid-card_btn-arrow",
-                  "src": "./imgs/arrow_circle.svg",
+                  "src": "/assets/imgs/arrow_circle.svg",
                   "alt": "pointer arrow icon"
                 }
               ]
@@ -52,7 +52,7 @@
         {
           "type": "img",
           "class": "articles-news-card_img",
-          "src": "./imgs/card_kitchen2.png",
+          "src": "/assets/imgs/card_kitchen2.png",
           "alt": "photo of a kitchen"
         },
         {
@@ -81,7 +81,7 @@
                 {
                   "type": "img",
                   "class": "follow-projects_grid-card_btn-arrow",
-                  "src": "./imgs/arrow_circle.svg",
+                  "src": "/assets/imgs/arrow_circle.svg",
                   "alt": "pointer arrow icon"
                 }
               ]
@@ -97,7 +97,7 @@
         {
           "type": "img",
           "class": "articles-news-card_img",
-          "src": "./imgs/card_kitchen3.png",
+          "src": "/assets/imgs/card_kitchen3.png",
           "alt": "photo of a kitchen"
         },
         {
@@ -126,7 +126,7 @@
                 {
                   "type": "img",
                   "class": "follow-projects_grid-card_btn-arrow",
-                  "src": "./imgs/arrow_circle.svg",
+                  "src": "/assets/imgs/arrow_circle.svg",
                   "alt": "pointer arrow icon"
                 }
               ]
@@ -142,7 +142,7 @@
         {
           "type": "img",
           "class": "articles-news-card_img",
-          "src": "./imgs/card_kitchen4.png",
+          "src": "/assets/imgs/card_kitchen4.png",
           "alt": "photo of a kitchen"
         },
         {
@@ -171,7 +171,7 @@
                 {
                   "type": "img",
                   "class": "follow-projects_grid-card_btn-arrow",
-                  "src": "./imgs/arrow_circle.svg",
+                  "src": "/assets/imgs/arrow_circle.svg",
                   "alt": "pointer arrow icon"
                 }
               ]
@@ -187,7 +187,7 @@
         {
           "type": "img",
           "class": "articles-news-card_img",
-          "src": "./imgs/card_kitchen5.png",
+          "src": "/assets/imgs/card_kitchen5.png",
           "alt": "photo of a kitchen"
         },
         {
@@ -216,7 +216,7 @@
                 {
                   "type": "img",
                   "class": "follow-projects_grid-card_btn-arrow",
-                  "src": "./imgs/arrow_circle.svg",
+                  "src": "/assets/imgs/arrow_circle.svg",
                   "alt": "pointer arrow icon"
                 }
               ]
@@ -232,7 +232,7 @@
         {
           "type": "img",
           "class": "articles-news-card_img",
-          "src": "./imgs/card_kitchen6.png",
+          "src": "/assets/imgs/card_kitchen6.png",
           "alt": "photo of a kitchen"
         },
         {
@@ -261,7 +261,7 @@
                 {
                   "type": "img",
                   "class": "follow-projects_grid-card_btn-arrow",
-                  "src": "./imgs/arrow_circle.svg",
+                  "src": "/assets/imgs/arrow_circle.svg",
                   "alt": "pointer arrow icon"
                 }
               ]

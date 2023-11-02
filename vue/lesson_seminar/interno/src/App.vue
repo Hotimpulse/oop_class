@@ -1,20 +1,23 @@
 <template>
   <!-- <IndexPage />
-  <BlogPage /> -->
-  <BlogDetails />
+  <BlogDetails /> -->
+    <!-- <BlogPage /> -->
+  <ProjectPage />
 </template>
 
 <script>
 // import IndexPage from "./components/IndexPage.vue";
-// import BlogPage from "./components/BlogPage.vue";
-import BlogDetails from "./pages/BlogDetails.vue";
+// import BlogPage from "./pages/BlogPage.vue";
+// import BlogDetails from "./pages/BlogDetails.vue";
+import ProjectPage from "./pages/ProjectPage.vue";
 
 export default {
   name: "App",
   components: {
     // IndexPage,
     // BlogPage,
-    BlogDetails,
+    // BlogDetails,
+    ProjectPage
   },
 };
 </script>
@@ -30,4 +33,3 @@ export default {
   src: url("./assets/fonts/Jost/Jost-VariableFont_wght.ttf");
 }
 </style>
-
