@@ -1,19 +1,38 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <PaymentsDisplay :items="paymentList" />
+    <AddList @addNewPay="addNewPay" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { mapActions, mapGetters, mapMutations, mapState } from "vuex";
+import PaymentsDisplay from "./components/PaymentsDisplay.vue";
+import AddList from "./components/AddList.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    PaymentsDisplay,
+    AddList,
+  },
+  methods: {
+    addNewPay(data) {
+      this.ADD_PAYMENT(data);
+    },
+    ...mapMutations(["SET_PAYMENT", "ADD_PAYMENT"]),
+  },
+  computed: {
+    ...mapState(["paymentList"]),
+    ...mapGetters(["getPayment", "getFullPayment"]),
+    ...mapActions(["fetchData"]),
+  },
+  created() {
+    this.$store.dispatch('fetchData').then(() => {
+      this.SET_PAYMENT(this.$store.getters.getPayment)
+    })
+  },
+};
 </script>
 
 <style>
