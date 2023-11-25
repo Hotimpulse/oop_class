@@ -1,10 +1,10 @@
 <template>
   <section :class="$style['blog-hero']">
     <img src="./../assets/imgs/blog-banner.jpg" alt="blog banner image" />
-    <div :class="$style['blog-hero_text-wrapper']">
+    <!-- <div :class="$style['blog-hero_text-wrapper']">
       <h1 :class="$style['blog-hero_header']">{{name}}</h1>
       <span :class="$style['blog-hero_span']">Home / Blog</span>
-    </div>
+    </div> -->
   </section>
 </template>
 
