@@ -1,14 +1,14 @@
 <template>
   <div :class="$style['header-wrapper']">
     <div :class="$style['header-wrapper-logo']">
-      <a href="/">
+      <router-link to="/">
         <img
           :class="$style['header-wrapper-logo-svg']"
           src="./../assets/imgs/Logo.svg"
           alt="Interno logo"
         />
         <span :class="$style['header-wrapper-text']">Interno</span>
-      </a>
+      </router-link>
     </div>
     <nav :class="$style.nav">
       <li :class="$style['header-wrapper-links']">
