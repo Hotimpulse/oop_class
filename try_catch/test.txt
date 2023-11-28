@@ -1,4 +1,0 @@
-Mark=1
-Susan=2
-Jack=3
-Richard=4
