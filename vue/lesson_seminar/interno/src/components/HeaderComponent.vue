@@ -1,7 +1,7 @@
 <template>
   <div :class="$style['header-wrapper']">
     <div :class="$style['header-wrapper-logo']">
-      <a href="./index.html">
+      <a href="/">
         <img
           :class="$style['header-wrapper-logo-svg']"
           src="./../assets/imgs/Logo.svg"
@@ -11,9 +11,11 @@
       </a>
     </div>
     <nav :class="$style.nav">
-      <li><a href="./../assets/pages/index.html">Home</a></li>
-      <li><a href="#">Project</a></li>
-      <li><a href="./../assets/pages/blog.html">Blog</a></li>
+      <li :class="$style['header-wrapper-links']">
+        <router-link to="/">Home</router-link>
+        <router-link to="/project">Project</router-link>
+        <router-link to="/blog">Blog</router-link>
+      </li>
     </nav>
   </div>
 </template>
@@ -67,15 +69,12 @@ export default {
   width: 2.12488rem;
   height: 2.125rem;
   margin-right: 1rem;
+  vertical-align: 0;
 }
 
 .nav {
   @include centerFlex;
   padding: 0 5rem;
-  & li {
-    list-style: none;
-    padding: 1rem;
-  }
 
   & a {
     text-decoration: none;
@@ -85,6 +84,10 @@ export default {
     font-weight: 400;
     line-height: 125%;
   }
+
+  .header-wrapper-links {
+    display: flex;
+    gap: 1rem;
+  }
 }
 </style>
-

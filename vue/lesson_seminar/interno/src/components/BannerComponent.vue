@@ -1,19 +1,21 @@
 <template>
   <section :class="$style['blog-hero']">
     <img src="./../assets/imgs/blog-banner.jpg" alt="blog banner image" />
-    <!-- <div :class="$style['blog-hero_text-wrapper']">
-      <h1 :class="$style['blog-hero_header']">{{name}}</h1>
-      <span :class="$style['blog-hero_span']">Home / Blog</span>
-    </div> -->
+    <div :class="$style['blog-hero_text-wrapper']">
+      <h1 :class="$style['blog-hero_header']">{{ name }}</h1>
+      <router-link to="/">
+        <span :class="$style['blog-hero_span']">Home</span>
+      </router-link>
+    </div>
   </section>
 </template>
 
 <script>
 export default {
-    name: 'BannerComp',
-    props: {
-      name: String,
-    },
+  name: "BannerComponent",
+  props: {
+    name: String,
+  },
 };
 </script>
 

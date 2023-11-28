@@ -1,6 +1,5 @@
 <template>
   <div :class="$style.wrapper">
-    <HeaderComponent />
     <main>
       <section :class="$style.hero">
         <div :class="$style['hero-wrapper']">
@@ -10,10 +9,12 @@
             There are many variations of the passages of lorem Ipsum available,
             majority.
           </p>
-          <button :class="$style.hero_btn">
-            Get Started
-            <img src="./../assets/imgs/arrow.svg" alt="arrow icon" />
-          </button>
+          <router-link to="/project">
+            <button :class="$style.hero_btn">
+              Get Started
+              <img src="./../assets/imgs/arrow.svg" alt="arrow icon" />
+            </button>
+          </router-link>
         </div>
       </section>
 
@@ -225,20 +226,12 @@
         </div>
       </section>
     </main>
-    <FooterComponent />
   </div>
 </template>
 
 <script>
-import HeaderComponent from "../components/HeaderComponent.vue";
-import FooterComponent from "../components/FooterComponent.vue";
-
 export default {
   name: "IndexPage",
-  components: {
-    HeaderComponent,
-    FooterComponent,
-  },
 };
 </script>
 

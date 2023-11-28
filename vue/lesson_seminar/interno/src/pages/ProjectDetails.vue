@@ -1,7 +1,6 @@
 <template>
   <div class="project-dets_wrapper">
-    <HeaderComponent />
-    <BannerComp />
+    <BannerComponent name="Details" />
     <div class="project-dets_content">
       <div class="article" v-for="(project, index) in allProjects" :key="index">
         <h1 class="project-dets_headline">{{ project.text }}</h1>
@@ -29,22 +28,17 @@
         </b-carousel>
       </b-container>
     </div>
-    <FooterComponent />
   </div>
 </template>
 
 <script>
-import HeaderComponent from "@/components/HeaderComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
-import BannerComp from "@/components/BannerComp.vue";
+import BannerComponent from "@/components/BannerComponent.vue";
 import { mapGetters } from "vuex";
 
 export default {
   name: "ProjectDetails",
   components: {
-    HeaderComponent,
-    BannerComp,
-    FooterComponent,
+    BannerComponent,
   },
   computed: {
     ...mapGetters(["fetchArticles", "allProjects"]),

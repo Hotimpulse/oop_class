@@ -1,6 +1,5 @@
 <template>
   <div :class="$style.wrapper">
-    <HeaderComponent />
     <main>
       <div :class="$style['details-hero']">
         <img
@@ -25,22 +24,19 @@
         </section>
       </div>
     </main>
-    <BlogComp />
-    <FooterComponent />
+    <BlogComponent />
   </div>
 </template>
 
 <script>
-import FooterComponent from "../components/FooterComponent.vue";
-import HeaderComponent from "../components/HeaderComponent.vue";
-import BlogComp from "../components/BlogComp.vue";
+// import FooterComponent from "../components/FooterComponent.vue";
+// import HeaderComponent from "../components/HeaderComponent.vue";
+import BlogComponent from "../components/BlogComponent.vue";
 
 export default {
   name: "IndexPage",
   components: {
-    FooterComponent,
-    HeaderComponent,
-    BlogComp,
+    BlogComponent,
   },
 };
 </script>

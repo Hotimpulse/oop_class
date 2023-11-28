@@ -1,26 +1,23 @@
 <template>
-  <!-- <IndexPage />
-  <BlogDetails /> -->
-  <!-- <BlogPage /> -->
-  <!-- <ProjectPage /> -->
-  <ProjectDetails />
+  <div>
+    <HeaderComponent />
+    <router-view />
+    <FooterComponent />
+  </div>
 </template>
 
 <script>
-// import IndexPage from "./components/IndexPage.vue";
-// import BlogPage from "./pages/BlogPage.vue";
-// import BlogDetails from "./pages/BlogDetails.vue";
-// import ProjectPage from "./pages/ProjectPage.vue";
-import ProjectDetails from "./pages/ProjectDetails.vue";
+import HeaderComponent from "./components/HeaderComponent.vue";
+import FooterComponent from "./components/FooterComponent.vue";
 
 export default {
   name: "App",
   components: {
-    // IndexPage,
-    // BlogPage,
-    // BlogDetails,
-    // ProjectPage,
-    ProjectDetails,
+    HeaderComponent,
+    FooterComponent
+  },
+  created() {
+    this.$router.push({ name: "home" });
   },
 };
 </script>
@@ -34,5 +31,9 @@ export default {
 @font-face {
   font-family: "Jost";
   src: url("./assets/fonts/Jost/Jost-VariableFont_wght.ttf");
+}
+.router-link {
+  text-decoration: none;
+  list-style: none;
 }
 </style>

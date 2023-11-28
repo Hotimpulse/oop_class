@@ -1,7 +1,6 @@
 <template>
   <div class="wrapper">
-    <HeaderComponent />
-    <BannerComp :name="'Our Project'" />
+    <BannerComponent :name="'Our Project'" />
     <div class="project_selector-wrapper">
       <button @click="filterTags('Bathroom')" class="project_selector-item">
         Bathroom
@@ -19,47 +18,46 @@
 
     <div class="wrapper-grid">
       <div class="project_selector_card-wrapper">
-        <div
-          v-for="(project, index) in filteredProjects"
-          :key="index"
-          :class="['project_selector_card', `${project.type}`]"
-        >
-          <img :src="project.src" :alt="project.text" />
-          <div class="project_selector_card_text-img-wrapper">
-            <div class="project_selector_card_text-wrapper">
-              <p :class="['project_selector_card_text']">{{ project.text }}</p>
-              <p :class="['project_selector_card_text2']">
-                {{ project.subtext }}
-              </p>
+        <router-link to="/project-details">
+          <div
+            v-for="(project, index) in filteredProjects"
+            :key="index"
+            :class="['project_selector_card', `${project.type}`]"
+          >
+            <img :src="project.src" :alt="project.text" />
+            <div class="project_selector_card_text-img-wrapper">
+              <div class="project_selector_card_text-wrapper">
+                <p :class="['project_selector_card_text']">
+                  {{ project.text }}
+                </p>
+                <p :class="['project_selector_card_text2']">
+                  {{ project.subtext }}
+                </p>
+              </div>
+              <button class="blog-latest-post_wrapper-line-btn">
+                <img
+                  class="follow-projects_grid-card_btn-arrow"
+                  src="./../assets/imgs/arrow_circle.svg"
+                  alt="pointer arrow icon"
+                />
+              </button>
             </div>
-            <button class="blog-latest-post_wrapper-line-btn">
-              <img
-                class="follow-projects_grid-card_btn-arrow"
-                src="./../assets/imgs/arrow_circle.svg"
-                alt="pointer arrow icon"
-              />
-            </button>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
     <PaginationComponent :items="['01', '02', '03']" />
-    <FooterComponent />
   </div>
 </template>
 
 <script>
-import HeaderComponent from "@/components/HeaderComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
-import BannerComp from "@/components/BannerComp.vue";
-import PaginationComponent from "@/components/PaginationComp.vue";
+import BannerComponent from "@/components/BannerComponent.vue";
+import PaginationComponent from "@/components/PaginationComponent.vue";
 
 export default {
   name: "ProjectPage",
   components: {
-    HeaderComponent,
-    FooterComponent,
-    BannerComp,
+    BannerComponent,
     PaginationComponent,
   },
   data() {
@@ -193,6 +191,9 @@ export default {
   column-count: 2;
   gap: 2rem;
   margin-bottom: 61px;
+  &_-link {
+    text-decoration: none;
+  }
 }
 
 .box-big {
@@ -228,6 +229,7 @@ export default {
     line-height: 125%;
     letter-spacing: 0.5px;
     margin-bottom: 4px;
+    font-style: none;
   }
   &_text2 {
     color: #4d5053;
@@ -237,6 +239,8 @@ export default {
     line-height: 150%;
     letter-spacing: 0.22px;
     margin: 0;
+    text-decoration: none;
+
   }
 }
 

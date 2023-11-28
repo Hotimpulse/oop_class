@@ -7,7 +7,7 @@
         {
           "type": "img",
           "class": "articles-news-card_img",
-          "src": "/assets/imgs/card_kitchen1.png",
+          "src": "assets/imgs/card_kitchen1.png",
           "alt": "photo of a kitchen"
         },
         {

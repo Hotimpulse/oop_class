@@ -5,7 +5,7 @@
       @filter="filterByTag"
       :selectedTag="selectedTag"
     />
-    <ArticleComp
+    <ArticleComponent
       v-for="article in displayedArticles"
       :key="article.title"
       :title="article.title"
@@ -17,12 +17,12 @@
 
 <script>
 import TagSystem from "./TagSystem.vue";
-import ArticleComp from "./ArticleComp.vue";
+import ArticleComponent from "./ArticleComponent.vue";
 
 export default {
   components: {
     TagSystem,
-    ArticleComp,
+    ArticleComponent,
   },
   data() {
     return {

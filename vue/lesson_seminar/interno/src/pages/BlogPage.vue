@@ -1,9 +1,7 @@
 <template>
-  <HeaderComponent />
   <div :class="$style.wrapper">
-    <BannerComp :name="Articles & News" />
+    <BannerComponent :name="`Articles & News`" />
     <main>
-
       <section :class="$style['blog-latest-post']">
         <h1 :class="$style['blog-latest-post_headline']">Latest Post</h1>
         <div :class="$style['blog-latest-post_wrapper']">
@@ -48,80 +46,31 @@
           <div
             v-for="(card, index) in cards"
             :key="index"
-            :class="$style[card.class]"
+            :class="$style['articles-news-card']"
           >
-            <template v-for="(value, key) in card.children">
-              <template v-if="key !== 'children'">
-                <component
-                  v-if="value.type !== 'htmlContent'"
-                  :is="value.type"
-                  :class="$style[card.class]"
-                  :src="value.src.startsWith('/') ? value.src : `/assets${value.src}`"
-                  :alt="value.alt"
-                  :key="key"
-                ></component>
-                <span
-                  v-else-if="value.type === 'htmlContent'"
-                  :class="$style[value.class]"
-                  v-html="value.text"
-                  :key="`level1_${index}_${value.text}`"
-                ></span>
-              </template>
-              <div
-                v-else-if="key === 'children'"
-                :class="$style[value.class]"
-                :key="`levelas1_${index}_${value.text}`"
-              >
-                <template v-for="(child, childIndex) in value">
-                  <template v-if="child.type !== 'children'">
-                    <component
-                      v-if="child.type !== 'htmlContent'"
-                      :is="child.type"
-                      :class="$style[child.class]"
-                      :src="child.src.startsWith('/') ? child.src : `/assets${child.src}`"
-                      :alt="child.alt"
-                      :key="childIndex"
-                    ></component>
-                    <span
-                      v-else-if="child.type === 'htmlContent'"
-                      :class="$style[child.class]"
-                      v-html="child.text"
-                      :key="`level2_${index}_${childIndex}`"
-                    ></span>
-                  </template>
-                  <div
-                    v-else-if="
-                      child.type === 'div' &&
-                      child.class === 'articles-news-card_wrapper'
-                    "
-                    :key="childIndex"
-                  >
-                    <div :class="$style[child.class]">
-                      <template
-                        v-for="(grandchild, grandIndex) in child.children"
-                      >
-                        <template v-if="grandchild.type !== 'children'">
-                          <component
-                            v-if="grandchild.type !== 'htmlContent'"
-                            :is="grandchild.type"
-                            :class="$style[grandchild.class]"
-                            :src="grandchild.src.startsWith('/') ? grandchild.src : `/assets${grandchild.src}`"
-                            :alt="grandchild.alt"
-                            :key="grandIndex"
-                          ></component>
-                          <span
-                            v-else-if="grandchild.type === 'htmlContent'"
-                            :class="$style[grandchild.class]"
-                            v-html="grandchild.text"
-                            :key="`level3_${index}_${childIndex}_${grandIndex}`"
-                          ></span>
-                        </template>
-                      </template>
-                    </div>
-                  </div>
-                </template>
-              </div>
-            </template>
+            <img
+              :src="card.children[0].src"
+              :alt="card.children[0].alt"
+              :class="$style['articles-news-card_img']"
+            />
+            <div class="$style['articles-news-card_plaque']">
+              {{ card.children[1].text }}
+            </div>
+            <h3 :class="$style['articles-news-card_header']">
+              {{ card.children[2].text }}
+            </h3>
+            <div :class="$style['articles-news-card_wrapper']">
+              <p :class="$style['articles-news-card_text']">
+                {{ card.children[3].children[0].text }}
+              </p>
+              <button :class="$style['articles-news-card_btn']">
+                <img
+                  :src="card.children[3].children[1].children[0].src"
+                  :alt="card.children[3].children[1].children[0].alt"
+                  :class="$style['follow-projects_grid-card_btn-arrow']"
+                />
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -129,24 +78,18 @@
       <PaginationComponent :items="['01', '02', '03']" />
     </main>
   </div>
-  <FooterComponent />
 </template>
 
 <script>
-import FooterComponent from "../components/FooterComponent.vue";
-import HeaderComponent from "../components/HeaderComponent.vue";
-import BannerComp from "@/components/BannerComp.vue";
-import PaginationComp from "@/components/PaginationComp.vue";
+import BannerComponent from "@/components/BannerComponent.vue";
+import PaginationComponent from "@/components/PaginationComponent.vue";
 
 export default {
   name: "BlogPage",
   components: {
-    FooterComponent,
-    HeaderComponent,
-    BannerComp,
-    PaginationComp
+    BannerComponent,
+    PaginationComponent,
   },
-  el: ".blog-articles-news-container",
   data: function () {
     return {
       cards: [],
@@ -166,6 +109,16 @@ export default {
           console.error(`Error fetching data:`, error);
         });
     },
+    getImageSrc(card) {
+      return card.children[0].src.startsWith("/")
+        ? card.children[0].src
+        : `/assets${card.children[0].src}`;
+    },
+    getArrowSrc(card) {
+      return card.children[4].children[0].src.startsWith("/")
+        ? card.children[4].children[0].src
+        : `/assets${card.children[4].children[0].src}`;
+    },
   },
 };
 </script>
@@ -176,13 +129,6 @@ export default {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-}
-
-.wrapper {
-  @include centerFlex;
-  flex-direction: column;
-  width: fit-content;
-  padding: 0 5rem;
 }
 
 .blog-latest-post {
@@ -267,10 +213,82 @@ export default {
   }
 }
 
+.articles-news_header {
+  color: #292f36;
+  font-family: "DM Serif Display";
+  font-size: 50px;
+  line-height: 125%;
+  letter-spacing: 1px;
+}
+
 .blog-articles-news-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-bottom: 41px;
+}
+.articles-news-card {
+  display: flex;
+  flex-direction: column;
+  width: 382px;
+  height: 521px;
+  border-radius: 62px;
+  background-color: #e7e7e7;
+  padding: 1.5rem;
+  margin-top: 1rem;
+  &_img {
+    height: 289px;
+    margin-bottom: 21px;
+  }
+  &_plaque {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7.75rem;
+    height: 2.5625rem;
+    flex-shrink: 0;
+    border-radius: 0.5rem 0.5rem 0.5rem 0rem;
+    background: #fff;
+    color: #4d5053;
+    font-family: Jost;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0.01rem;
+    position: relative;
+    margin-top: -5rem;
+    margin-left: 1rem;
+    margin-bottom: 2rem;
+  }
+  &_header {
+    color: #292f36;
+    font-family: "DM Serif Display";
+    font-size: 25px;
+    line-height: 125%;
+    letter-spacing: 0.5px;
+  }
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &_text {
+    color: #4d5053;
+    font-family: Jost;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.16px;
+  }
+  &_btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 10rem;
+    border: none;
+    background: #f4f0ec;
+  }
+  &_btn-arrow {
+    width: 8px;
+    height: 18px;
+  }
 }
 </style>

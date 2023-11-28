@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "ArticleComp",
+  name: "ArticleComponent",
   props: ["title", "content", "imgSrc", "tags"],
   
 };
