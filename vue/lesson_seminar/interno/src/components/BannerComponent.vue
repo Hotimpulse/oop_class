@@ -3,7 +3,7 @@
     <img src="./../assets/imgs/blog-banner.jpg" alt="blog banner image" />
     <div :class="$style['blog-hero_text-wrapper']">
       <h1 :class="$style['blog-hero_header']">{{ name }}</h1>
-      <router-link to="/">
+      <router-link to="/asd">
         <span :class="$style['blog-hero_span']">Home</span>
       </router-link>
     </div>
